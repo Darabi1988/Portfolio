@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mechanical Engineer — Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@300;400;500&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --black: #0d0d0d;
+    --white: #fafaf8;
+    --gray-100: #f4f4f2;
+    --gray-200: #e8e8e4;
+    --gray-400: #b0b0aa;
+    --gray-600: #6e6e68;
+    --accent: #1a3a5c;
+    --accent-light: #e8eff7;
+    --mono: 'DM Mono', monospace;
+    --serif: 'DM Serif Display', serif;
+    --sans: 'Outfit', sans-serif;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--sans);
+    background: var(--white);
+    color: var(--black);
+    font-size: 15px;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 1.25rem 3rem;
+    background: rgba(250,250,248,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--gray-200);
+  }
+  .nav-logo {
+    font-family: var(--mono);
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--accent);
+    letter-spacing: 0.04em;
+  }
+  .nav-links {
+    display: flex; gap: 2.5rem; list-style: none;
+  }
+  .nav-links a {
+    font-size: 13px; font-weight: 400;
+    color: var(--gray-600); text-decoration: none;
+    letter-spacing: 0.03em;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--black); }
+  .nav-cta {
+    font-family: var(--mono);
+    font-size: 12px; font-weight: 500;
+    color: var(--white);
+    background: var(--black);
+    border: none; cursor: pointer;
+    padding: 8px 20px;
+    letter-spacing: 0.05em;
+    transition: background 0.2s;
+  }
+  .nav-cta:hover { background: var(--accent); }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    display: flex; align-items: center;
+    padding: 8rem 3rem 4rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-bg-number {
+    position: absolute; right: -0.02em; top: 50%;
+    transform: translateY(-50%);
+    font-family: var(--serif);
+    font-size: clamp(180px, 25vw, 340px);
+    color: var(--gray-100);
+    user-select: none;
+    line-height: 1;
+    z-index: 0;
+  }
+  .hero-content { position: relative; z-index: 1; max-width: 760px; }
+  .hero-eyebrow {
+    display: flex; align-items: center; gap: 12px;
+    margin-bottom: 2rem;
+  }
+  .hero-eyebrow-line { width: 32px; height: 1px; background: var(--accent); }
+  .hero-eyebrow span {
+    font-family: var(--mono); font-size: 12px; font-weight: 400;
+    color: var(--accent); letter-spacing: 0.1em; text-transform: uppercase;
+  }
+  .hero h1 {
+    font-family: var(--serif);
+    font-size: clamp(44px, 6.5vw, 82px);
+    font-weight: 400;
+    line-height: 1.1;
+    color: var(--black);
+    margin-bottom: 1.5rem;
+  }
+  .hero h1 em { font-style: italic; color: var(--accent); }
+  .hero-desc {
+    font-size: 16px; font-weight: 300;
+    color: var(--gray-600); line-height: 1.8;
+    max-width: 520px; margin-bottom: 3rem;
+  }
+  .hero-actions { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; }
+  .btn-solid {
+    font-family: var(--mono); font-size: 12px; font-weight: 500;
+    letter-spacing: 0.06em; text-transform: uppercase;
+    color: var(--white); background: var(--black);
+    border: 1px solid var(--black);
+    padding: 14px 32px; cursor: pointer;
+    text-decoration: none; display: inline-block;
+    transition: all 0.2s;
+  }
+  .btn-solid:hover { background: var(--accent); border-color: var(--accent); }
+  .btn-outline {
+    font-family: var(--mono); font-size: 12px; font-weight: 500;
+    letter-spacing: 0.06em; text-transform: uppercase;
+    color: var(--black); background: transparent;
+    border: 1px solid var(--gray-200);
+    padding: 14px 32px; cursor: pointer;
+    text-decoration: none; display: inline-block;
+    transition: all 0.2s;
+  }
+  .btn-outline:hover { border-color: var(--black); }
+  .hero-stats {
+    display: flex; gap: 3rem; margin-top: 4rem;
+    padding-top: 2.5rem; border-top: 1px solid var(--gray-200);
+  }
+  .hero-stat-num {
+    font-family: var(--serif); font-size: 36px;
+    color: var(--black); line-height: 1;
+  }
+  .hero-stat-label {
+    font-size: 12px; color: var(--gray-400);
+    margin-top: 4px; font-weight: 300;
+  }
+
+  /* ── SECTION BASE ── */
+  section { padding: 6rem 3rem; }
+  .section-header { margin-bottom: 4rem; }
+  .section-tag {
+    font-family: var(--mono); font-size: 11px; font-weight: 400;
+    color: var(--gray-400); letter-spacing: 0.12em; text-transform: uppercase;
+    display: flex; align-items: center; gap: 10px; margin-bottom: 1rem;
+  }
+  .section-tag::before {
+    content: ''; display: block;
+    width: 20px; height: 1px; background: var(--gray-400);
+  }
+  .section-title {
+    font-family: var(--serif); font-size: clamp(30px, 4vw, 48px);
+    font-weight: 400; line-height: 1.2; color: var(--black);
+  }
+
+  /* ── SKILLS ── */
+  #skills { background: var(--gray-100); }
+  .skills-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1px; background: var(--gray-200);
+    border: 1px solid var(--gray-200);
+  }
+  .skill-item {
+    background: var(--gray-100);
+    padding: 2.5rem 2rem;
+    transition: background 0.25s;
+    cursor: default;
+  }
+  .skill-item:hover { background: var(--white); }
+  .skill-num {
+    font-family: var(--mono); font-size: 11px; font-weight: 300;
+    color: var(--gray-400); letter-spacing: 0.08em;
+    margin-bottom: 1.5rem;
+  }
+  .skill-name {
+    font-family: var(--serif); font-size: 22px; font-weight: 400;
+    color: var(--black); margin-bottom: 0.75rem;
+  }
+  .skill-tools-list {
+    display: flex; flex-direction: column; gap: 4px;
+    margin-top: 1rem;
+  }
+  .skill-tool {
+    font-family: var(--mono); font-size: 11px; font-weight: 400;
+    color: var(--gray-600); letter-spacing: 0.03em;
+    display: flex; align-items: center; gap: 6px;
+  }
+  .skill-tool::before { content: '—'; color: var(--gray-400); font-size: 10px; }
+  .skill-desc { font-size: 13px; color: var(--gray-600); font-weight: 300; line-height: 1.7; }
+
+  /* ── PROJECTS ── */
+  #projects { background: var(--white); }
+  .projects-list { display: flex; flex-direction: column; gap: 0; }
+  .project-row {
+    display: grid; grid-template-columns: 80px 1fr auto;
+    align-items: start; gap: 2rem;
+    padding: 2.5rem 0;
+    border-bottom: 1px solid var(--gray-200);
+    transition: background 0.2s;
+    cursor: default;
+  }
+  .project-row:first-child { border-top: 1px solid var(--gray-200); }
+  .project-row:hover { padding-left: 1rem; padding-right: 1rem; margin: 0 -1rem; background: var(--gray-100); }
+  .project-index {
+    font-family: var(--mono); font-size: 11px; font-weight: 300;
+    color: var(--gray-400); padding-top: 4px;
+  }
+  .project-content {}
+  .project-category {
+    font-family: var(--mono); font-size: 10px; font-weight: 500;
+    color: var(--accent); letter-spacing: 0.1em; text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+  .project-title {
+    font-family: var(--serif); font-size: 22px; font-weight: 400;
+    color: var(--black); margin-bottom: 8px; line-height: 1.3;
+  }
+  .project-desc { font-size: 14px; color: var(--gray-600); font-weight: 300; max-width: 580px; }
+  .project-tags { display: flex; flex-direction: column; gap: 4px; align-items: flex-end; padding-top: 4px; }
+  .tag {
+    font-family: var(--mono); font-size: 10px; font-weight: 400;
+    color: var(--gray-600); letter-spacing: 0.05em;
+    background: var(--gray-200); padding: 3px 10px;
+    white-space: nowrap;
+  }
+
+  /* ── ABOUT ── */
+  #about { background: var(--accent); }
+  #about .section-tag { color: rgba(255,255,255,0.4); }
+  #about .section-tag::before { background: rgba(255,255,255,0.4); }
+  #about .section-title { color: var(--white); }
+  .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; }
+  .about-text { font-size: 16px; font-weight: 300; color: rgba(255,255,255,0.75); line-height: 1.9; }
+  .about-text p + p { margin-top: 1.5rem; }
+  .about-right {}
+  .about-specs { border-top: 1px solid rgba(255,255,255,0.12); margin-top: 2rem; }
+  .about-spec {
+    display: flex; justify-content: space-between;
+    padding: 1rem 0; border-bottom: 1px solid rgba(255,255,255,0.12);
+  }
+  .about-spec-label { font-size: 12px; color: rgba(255,255,255,0.45); font-weight: 300; }
+  .about-spec-val { font-family: var(--mono); font-size: 12px; color: rgba(255,255,255,0.8); letter-spacing: 0.03em; }
+
+  /* ── SERVICES ── */
+  #services { background: var(--white); }
+  .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 2px; background: var(--gray-200); border: 1px solid var(--gray-200); }
+  .service-card { background: var(--white); padding: 2.5rem 2rem; }
+  .service-icon-row { margin-bottom: 1.5rem; }
+  .service-icon-box {
+    width: 40px; height: 40px;
+    border: 1px solid var(--gray-200);
+    display: flex; align-items: center; justify-content: center;
+    color: var(--accent);
+  }
+  .service-icon-box svg { width: 20px; height: 20px; stroke: var(--accent); fill: none; stroke-width: 1.5; }
+  .service-name { font-family: var(--serif); font-size: 20px; font-weight: 400; color: var(--black); margin-bottom: 0.75rem; }
+  .service-desc { font-size: 13px; color: var(--gray-600); font-weight: 300; line-height: 1.8; }
+  .service-price {
+    margin-top: 1.5rem; padding-top: 1.25rem;
+    border-top: 1px solid var(--gray-200);
+    font-family: var(--mono); font-size: 12px; color: var(--accent);
+  }
+
+  /* ── CONTACT ── */
+  #contact { background: var(--white); border-top: 1px solid var(--gray-200); }
+  .contact-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; }
+  .contact-left {}
+  .contact-tagline {
+    font-family: var(--serif); font-size: clamp(26px, 3vw, 40px);
+    font-weight: 400; line-height: 1.3; color: var(--black); margin-bottom: 2rem;
+  }
+  .contact-tagline em { font-style: italic; color: var(--accent); }
+  .contact-links { display: flex; flex-direction: column; gap: 12px; }
+  .contact-link {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1rem 1.25rem;
+    border: 1px solid var(--gray-200);
+    text-decoration: none;
+    transition: all 0.2s;
+    color: var(--black);
+  }
+  .contact-link:hover { border-color: var(--black); }
+  .contact-link-label { font-size: 14px; font-weight: 400; }
+  .contact-link-val { font-family: var(--mono); font-size: 12px; color: var(--gray-600); }
+  .contact-arrow { color: var(--gray-400); }
+  .contact-form-side {}
+  .contact-form-title { font-size: 13px; font-weight: 400; color: var(--gray-600); margin-bottom: 1.5rem; }
+  .form-row { margin-bottom: 1rem; }
+  .form-row input,
+  .form-row textarea,
+  .form-row select {
+    width: 100%; padding: 12px 16px;
+    font-family: var(--sans); font-size: 14px; font-weight: 300;
+    background: var(--gray-100); border: 1px solid transparent;
+    color: var(--black); outline: none; resize: none;
+    transition: border-color 0.2s;
+  }
+  .form-row input:focus, .form-row textarea:focus, .form-row select:focus { border-color: var(--black); background: var(--white); }
+  .form-row textarea { height: 120px; }
+  .form-row select option { font-size: 14px; }
+  .form-submit {
+    width: 100%;
+    font-family: var(--mono); font-size: 12px; font-weight: 500;
+    letter-spacing: 0.07em; text-transform: uppercase;
+    color: var(--white); background: var(--black);
+    border: none; padding: 16px;
+    cursor: pointer; transition: background 0.2s;
+  }
+  .form-submit:hover { background: var(--accent); }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--black); color: rgba(255,255,255,0.4);
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 1.5rem 3rem;
+    font-family: var(--mono); font-size: 11px; letter-spacing: 0.05em;
+  }
+  footer span { color: rgba(255,255,255,0.7); }
+
+  /* ── ANIMATIONS ── */
+  .fade-up { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease, transform 0.7s ease; }
+  .fade-up.visible { opacity: 1; transform: none; }
+
+  @media (max-width: 768px) {
+    nav { padding: 1rem 1.5rem; }
+    .nav-links { display: none; }
+    section { padding: 4rem 1.5rem; }
+    .hero { padding: 7rem 1.5rem 3rem; }
+    .hero-bg-number { display: none; }
+    .about-grid, .contact-layout { grid-template-columns: 1fr; gap: 2rem; }
+    .project-row { grid-template-columns: 50px 1fr; }
+    .project-tags { flex-direction: row; flex-wrap: wrap; align-items: flex-start; grid-column: 1/-1; }
+    footer { flex-direction: column; gap: 8px; text-align: center; padding: 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">ME.PORTFOLIO</div>
+  <ul class="nav-links">
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <button class="nav-cta" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Hire Me</button>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg-number">01</div>
+  <div class="hero-content">
+    <div class="hero-eyebrow fade-up">
+      <div class="hero-eyebrow-line"></div>
+      <span>Mechanical Engineer · FEM / CFD / CAD</span>
+    </div>
+    <h1 class="fade-up" style="transition-delay:0.1s">
+      Precision<br>engineering,<br><em>simulated.</em>
+    </h1>
+    <p class="hero-desc fade-up" style="transition-delay:0.2s">
+      Structural analysis, fluid dynamics, and 3D design specialist. Transforming complex engineering problems into validated, production-ready solutions.
+    </p>
+    <div class="hero-actions fade-up" style="transition-delay:0.3s">
+      <a href="#projects" class="btn-solid">View Projects</a>
+      <a href="#" class="btn-outline" id="cv-btn">Download CV</a>
+    </div>
+    <div class="hero-stats fade-up" style="transition-delay:0.4s">
+      <div>
+        <div class="hero-stat-num">12+</div>
+        <div class="hero-stat-label">Projects completed</div>
+      </div>
+      <div>
+        <div class="hero-stat-num">5</div>
+        <div class="hero-stat-label">Tools mastered</div>
+      </div>
+      <div>
+        <div class="hero-stat-num">3</div>
+        <div class="hero-stat-label">Years experience</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="section-header fade-up">
+    <div class="section-tag">Expertise</div>
+    <h2 class="section-title">Technical capabilities</h2>
+  </div>
+  <div class="skills-grid">
+    <div class="skill-item fade-up">
+      <div class="skill-num">01</div>
+      <div class="skill-name">FEM Analysis</div>
+      <div class="skill-desc">Structural, thermal, and fatigue simulation for complex mechanical assemblies and components.</div>
+      <div class="skill-tools-list">
+        <span class="skill-tool">ANSYS Mechanical</span>
+        <span class="skill-tool">Abaqus</span>
+        <span class="skill-tool">Static &amp; Dynamic Loading</span>
+        <span class="skill-tool">Fatigue &amp; Fracture Mechanics</span>
+      </div>
+    </div>
+    <div class="skill-item fade-up" style="transition-delay:0.1s">
+      <div class="skill-num">02</div>
+      <div class="skill-name">CFD Simulation</div>
+      <div class="skill-desc">Internal and external flow analysis, heat transfer, and aerodynamic optimization studies.</div>
+      <div class="skill-tools-list">
+        <span class="skill-tool">ANSYS Fluent</span>
+        <span class="skill-tool">Turbulence Modelling</span>
+        <span class="skill-tool">Conjugate Heat Transfer</span>
+        <span class="skill-tool">Mesh Generation</span>
+      </div>
+    </div>
+    <div class="skill-item fade-up" style="transition-delay:0.2s">
+      <div class="skill-num">03</div>
+      <div class="skill-name">3D CAD Design</div>
+      <div class="skill-desc">Parametric modelling, complex assemblies, GD&amp;T, and design-for-manufacture workflows.</div>
+      <div class="skill-tools-list">
+        <span class="skill-tool">CATIA V5</span>
+        <span class="skill-tool">SolidWorks</span>
+        <span class="skill-tool">Inventor</span>
+        <span class="skill-tool">Tolerance Analysis</span>
+      </div>
+    </div>
+    <div class="skill-item fade-up" style="transition-delay:0.3s">
+      <div class="skill-num">04</div>
+      <div class="skill-name">Engineering Scripts</div>
+      <div class="skill-desc">Automation of simulation workflows, data post-processing, and custom engineering calculation tools.</div>
+      <div class="skill-tools-list">
+        <span class="skill-tool">MATLAB</span>
+        <span class="skill-tool">Python</span>
+        <span class="skill-tool">Parametric Studies</span>
+        <span class="skill-tool">Post-Processing</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="section-header fade-up">
+    <div class="section-tag">Portfolio</div>
+    <h2 class="section-title">Selected projects</h2>
+  </div>
+  <div class="projects-list">
+    <div class="project-row fade-up">
+      <div class="project-index">01</div>
+      <div class="project-content">
+        <div class="project-category">FEM · Fatigue Analysis</div>
+        <div class="project-title">Pressure Vessel Fatigue Life Assessment</div>
+        <div class="project-desc">Cyclic loading simulation of a high-pressure industrial vessel to predict crack propagation and determine safe operating lifespan under multi-axial stress states.</div>
+      </div>
+      <div class="project-tags">
+        <span class="tag">ANSYS</span>
+        <span class="tag">Python</span>
+        <span class="tag">Fatigue</span>
+      </div>
+    </div>
+    <div class="project-row fade-up" style="transition-delay:0.05s">
+      <div class="project-index">02</div>
+      <div class="project-content">
+        <div class="project-category">CFD · Aerodynamics</div>
+        <div class="project-title">Vehicle Body Aerodynamic Drag Optimisation</div>
+        <div class="project-desc">External flow simulation over a production vehicle geometry using k-ω SST turbulence model. Achieved 14% drag coefficient reduction through geometry iteration.</div>
+      </div>
+      <div class="project-tags">
+        <span class="tag">Fluent</span>
+        <span class="tag">MATLAB</span>
+        <span class="tag">CFD</span>
+      </div>
+    </div>
+    <div class="project-row fade-up" style="transition-delay:0.1s">
+      <div class="project-index">03</div>
+      <div class="project-content">
+        <div class="project-category">CAD · Robotics</div>
+        <div class="project-title">6-DOF Robotic Arm — Full Parametric Assembly</div>
+        <div class="project-desc">Complete parametric design of an industrial-grade robotic arm in CATIA V5, including joint kinematics, GD&amp;T tolerancing, and manufacturing drawing package.</div>
+      </div>
+      <div class="project-tags">
+        <span class="tag">CATIA V5</span>
+        <span class="tag">GD&T</span>
+        <span class="tag">Assembly</span>
+      </div>
+    </div>
+    <div class="project-row fade-up" style="transition-delay:0.15s">
+      <div class="project-index">04</div>
+      <div class="project-content">
+        <div class="project-category">FEM · Thermal</div>
+        <div class="project-title">Heat Exchanger Thermal-Structural Analysis</div>
+        <div class="project-desc">Coupled thermal and structural simulation of a shell-and-tube heat exchanger under operating temperature gradients, including contact modelling between tube sheets and baffles.</div>
+      </div>
+      <div class="project-tags">
+        <span class="tag">ANSYS</span>
+        <span class="tag">Abaqus</span>
+        <span class="tag">Thermal</span>
+      </div>
+    </div>
+    <div class="project-row fade-up" style="transition-delay:0.2s">
+      <div class="project-index">05</div>
+      <div class="project-content">
+        <div class="project-category">Scripting · Automation</div>
+        <div class="project-title">Parametric Mesh Sensitivity Automation Tool</div>
+        <div class="project-desc">Python-based automation script for running mesh sensitivity studies in ANSYS batch mode, extracting convergence data, and generating structured reports with error metrics.</div>
+      </div>
+      <div class="project-tags">
+        <span class="tag">Python</span>
+        <span class="tag">ANSYS</span>
+        <span class="tag">Automation</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-header fade-up">
+    <div class="section-tag">About</div>
+    <h2 class="section-title" style="color: white;">The engineer<br>behind the work</h2>
+  </div>
+  <div class="about-grid">
+    <div class="about-text fade-up">
+      <p>I'm a mechanical engineer with a strong focus on computational simulation and precision CAD design. My work spans from structural integrity assessments of industrial equipment to fluid dynamics studies for product optimisation.</p>
+      <p>I believe that great engineering is part rigour, part creativity — and that the most valuable simulations are those that directly answer a real design question. Whether working within a team or independently on a freelance brief, I aim to deliver results that are clear, reproducible, and well-documented.</p>
+      <p>Currently open to full-time roles in R&amp;D or analysis engineering, as well as freelance simulation and modelling projects.</p>
+    </div>
+    <div class="about-right fade-up" style="transition-delay:0.1s">
+      <div class="about-specs">
+        <div class="about-spec">
+          <span class="about-spec-label">Degree</span>
+          <span class="about-spec-val">B.Sc. Mechanical Engineering</span>
+        </div>
+        <div class="about-spec">
+          <span class="about-spec-label">Specialisation</span>
+          <span class="about-spec-val">FEM · CFD · CAD</span>
+        </div>
+        <div class="about-spec">
+          <span class="about-spec-label">Languages</span>
+          <span class="about-spec-val">Farsi · English</span>
+        </div>
+        <div class="about-spec">
+          <span class="about-spec-label">Availability</span>
+          <span class="about-spec-val">Open to offers</span>
+        </div>
+        <div class="about-spec">
+          <span class="about-spec-label">Freelance</span>
+          <span class="about-spec-val">Available</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="section-header fade-up">
+    <div class="section-tag">Services</div>
+    <h2 class="section-title">What I can do<br>for you</h2>
+  </div>
+  <div class="services-grid">
+    <div class="service-card fade-up">
+      <div class="service-icon-row">
+        <div class="service-icon-box">
+          <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+        </div>
+      </div>
+      <div class="service-name">FEM Simulation</div>
+      <div class="service-desc">Structural, thermal, and fatigue analysis of components and assemblies. Includes meshing, boundary conditions, result validation, and engineering report.</div>
+      <div class="service-price">From $300 / project</div>
+    </div>
+    <div class="service-card fade-up" style="transition-delay:0.1s">
+      <div class="service-icon-row">
+        <div class="service-icon-box">
+          <svg viewBox="0 0 24 24"><path d="M3 12a9 9 0 1 0 18 0 9 9 0 0 0-18 0"/><path d="M3.6 9h16.8M3.6 15h16.8"/><path d="M12 3a9.96 9.96 0 0 1 2 5.91A9.96 9.96 0 0 1 12 21a9.96 9.96 0 0 1-2-5.91A9.96 9.96 0 0 1 12 3z"/></svg>
+        </div>
+      </div>
+      <div class="service-name">CFD Analysis</div>
+      <div class="service-desc">Internal and external flow, heat transfer, and aerodynamic studies. Turbulence modelling, mesh optimisation, and detailed post-processing included.</div>
+      <div class="service-price">From $350 / project</div>
+    </div>
+    <div class="service-card fade-up" style="transition-delay:0.2s">
+      <div class="service-icon-row">
+        <div class="service-icon-box">
+          <svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+        </div>
+      </div>
+      <div class="service-name">CAD Modelling</div>
+      <div class="service-desc">Parametric 3D modelling, complex assemblies, technical drawings with GD&amp;T, and design-for-manufacture packages ready for production.</div>
+      <div class="service-price">From $150 / part</div>
+    </div>
+    <div class="service-card fade-up" style="transition-delay:0.3s">
+      <div class="service-icon-row">
+        <div class="service-icon-box">
+          <svg viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+        </div>
+      </div>
+      <div class="service-name">Automation Scripts</div>
+      <div class="service-desc">MATLAB and Python tools for simulation automation, parametric studies, data processing pipelines, and engineering calculation dashboards.</div>
+      <div class="service-price">From $200 / script</div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="contact-layout">
+    <div class="contact-left fade-up">
+      <div class="section-tag">Contact</div>
+      <div class="contact-tagline">Let's solve<br>something <em>together.</em></div>
+      <div class="contact-links">
+        <a href="mailto:your@email.com" class="contact-link">
+          <span class="contact-link-label">Email</span>
+          <span class="contact-link-val">your@email.com</span>
+          <span class="contact-arrow">→</span>
+        </a>
+        <a href="https://linkedin.com" class="contact-link" target="_blank">
+          <span class="contact-link-label">LinkedIn</span>
+          <span class="contact-link-val">linkedin.com/in/yourname</span>
+          <span class="contact-arrow">→</span>
+        </a>
+        <a href="https://github.com" class="contact-link" target="_blank">
+          <span class="contact-link-label">GitHub</span>
+          <span class="contact-link-val">github.com/yourname</span>
+          <span class="contact-arrow">→</span>
+        </a>
+      </div>
+    </div>
+    <div class="contact-form-side fade-up" style="transition-delay:0.15s">
+      <div class="contact-form-title">Or send me a message directly</div>
+      <div class="form-row"><input type="text" placeholder="Your name"></div>
+      <div class="form-row"><input type="email" placeholder="Email address"></div>
+      <div class="form-row">
+        <select>
+          <option value="" disabled selected>Type of enquiry</option>
+          <option>Full-time position</option>
+          <option>Freelance project — FEM</option>
+          <option>Freelance project — CFD</option>
+          <option>Freelance project — CAD</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <div class="form-row"><textarea placeholder="Describe your project or opportunity…"></textarea></div>
+      <button class="form-submit">Send Message →</button>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <span>ME.PORTFOLIO</span>
+  <span>Mechanical Engineer · FEM · CFD · CAD</span>
+  <span>© 2025</span>
+</footer>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+  document.querySelector('#cv-btn').addEventListener('click', e => {
+    e.preventDefault();
+    alert('Replace this with a link to your actual CV PDF.');
+  });
+
+  document.querySelector('.form-submit').addEventListener('click', () => {
+    alert('Connect this form to a service like Formspree or EmailJS for real submissions.');
+  });
+</script>
+</body>
+</html>

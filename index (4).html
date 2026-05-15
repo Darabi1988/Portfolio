@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ali Cheloee-Darabi — Simulation & Development Engineer</title>
+<meta name="description" content="Mechanical Engineer with 12+ years in FEM, structural analysis, and data-driven simulation. Based in Germany.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@300;400;500&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --black: #0d0d0d;
+    --white: #fafaf8;
+    --gray-100: #f4f4f2;
+    --gray-200: #e8e8e4;
+    --gray-400: #b0b0aa;
+    --gray-600: #6e6e68;
+    --accent: #1a3a5c;
+    --accent-light: #e8eff7;
+    --mono: 'DM Mono', monospace;
+    --serif: 'DM Serif Display', serif;
+    --sans: 'Outfit', sans-serif;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--sans);
+    background: var(--white);
+    color: var(--black);
+    font-size: 15px;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 1.25rem 3rem;
+    background: rgba(250,250,248,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--gray-200);
+  }
+  .nav-logo {
+    font-family: var(--mono);
+    font-size: 13px; font-weight: 500;
+    color: var(--accent); letter-spacing: 0.04em;
+  }
+  .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+  .nav-links a {
+    font-size: 13px; font-weight: 400;
+    color: var(--gray-600); text-decoration: none;
+    letter-spacing: 0.03em; transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--black); }
+  .nav-cta {
+    font-family: var(--mono); font-size: 12px; font-weight: 500;
+    color: var(--white); background: var(--black);
+    border: none; cursor: pointer; padding: 8px 20px;
+    letter-spacing: 0.05em; transition: background 0.2s;
+  }
+  .nav-cta:hover { background: var(--accent); }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh; display: flex; align-items: center;
+    padding: 8rem 3rem 4rem; position: relative; overflow: hidden;
+  }
+  .hero-bg-text {
+    position: absolute; right: -0.02em; top: 50%;
+    transform: translateY(-50%);
+    font-family: var(--serif);
+    font-size: clamp(120px, 18vw, 260px);
+    color: var(--gray-100); user-select: none;
+    line-height: 1; z-index: 0; white-space: nowrap;
+  }
+  .hero-content { position: relative; z-index: 1; max-width: 760px; }
+  .hero-eyebrow { display: flex; align-items: center; gap: 12px; margin-bottom: 2rem; }
+  .hero-eyebrow-line { width: 32px; height: 1px; background: var(--accent); }
+  .hero-eyebrow span {
+    font-family: var(--mono); font-size: 12px; font-weight: 400;
+    color: var(--accent); letter-spacing: 0.1em; text-transform: uppercase;
+  }
+  .hero h1 {
+    font-family: var(--serif);
+    font-size: clamp(44px, 6.5vw, 80px);
+    font-weight: 400; line-height: 1.1;
+    color: var(--black); margin-bottom: 1.5rem;
+  }
+  .hero h1 em { font-style: italic; color: var(--accent); }
+  .hero-desc {
+    font-size: 16px; font-weight: 300;
+    color: var(--gray-600); line-height: 1.8;
+    max-width: 540px; margin-bottom: 3rem;
+  }
+  .hero-actions { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; }
+  .btn-solid {
+    font-family: var(--mono); font-size: 12px; font-weight: 500;
+    letter-spacing: 0.06em; text-transform: uppercase;
+    color: var(--white); background: var(--black);
+    border: 1px solid var(--black); padding: 14px 32px;
+    cursor: pointer; text-decoration: none; display: inline-block;
+    transition: all 0.2s;
+  }
+  .btn-solid:hover { background: var(--accent); border-color: var(--accent); }
+  .btn-outline {
+    font-family: var(--mono); font-size: 12px; font-weight: 500;
+    letter-spacing: 0.06em; text-transform: uppercase;
+    color: var(--black); background: transparent;
+    border: 1px solid var(--gray-200); padding: 14px 32px;
+    cursor: pointer; text-decoration: none; display: inline-block;
+    transition: all 0.2s;
+  }
+  .btn-outline:hover { border-color: var(--black); }
+  .hero-stats {
+    display: flex; gap: 3rem; margin-top: 4rem;
+    padding-top: 2.5rem; border-top: 1px solid var(--gray-200);
+    flex-wrap: wrap;
+  }
+  .hero-stat-num {
+    font-family: var(--serif); font-size: 36px;
+    color: var(--black); line-height: 1;
+  }
+  .hero-stat-label { font-size: 12px; color: var(--gray-400); margin-top: 4px; font-weight: 300; }
+
+  /* ── SECTION BASE ── */
+  section { padding: 6rem 3rem; }
+  .section-header { margin-bottom: 4rem; }
+  .section-tag {
+    font-family: var(--mono); font-size: 11px; font-weight: 400;
+    color: var(--gray-400); letter-spacing: 0.12em; text-transform: uppercase;
+    display: flex; align-items: center; gap: 10px; margin-bottom: 1rem;
+  }
+  .section-tag::before { content: ''; display: block; width: 20px; height: 1px; background: var(--gray-400); }
+  .section-title {
+    font-family: var(--serif); font-size: clamp(30px, 4vw, 48px);
+    font-weight: 400; line-height: 1.2; color: var(--black);
+  }
+
+  /* ── SKILLS ── */
+  #skills { background: var(--gray-100); }
+  .skills-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1px; background: var(--gray-200); border: 1px solid var(--gray-200);
+  }
+  .skill-item {
+    background: var(--gray-100); padding: 2.5rem 2rem;
+    transition: background 0.25s; cursor: default;
+  }
+  .skill-item:hover { background: var(--white); }
+  .skill-num {
+    font-family: var(--mono); font-size: 11px; font-weight: 300;
+    color: var(--gray-400); letter-spacing: 0.08em; margin-bottom: 1.5rem;
+  }
+  .skill-name { font-family: var(--serif); font-size: 22px; font-weight: 400; color: var(--black); margin-bottom: 0.75rem; }
+  .skill-desc { font-size: 13px; color: var(--gray-600); font-weight: 300; line-height: 1.7; }
+  .skill-tools-list { display: flex; flex-direction: column; gap: 4px; margin-top: 1rem; }
+  .skill-tool {
+    font-family: var(--mono); font-size: 11px; font-weight: 400;
+    color: var(--gray-600); letter-spacing: 0.03em;
+    display: flex; align-items: center; gap: 6px;
+  }
+  .skill-tool::before { content: '—'; color: var(--gray-400); font-size: 10px; }
+
+  /* ── EXPERIENCE ── */
+  #experience { background: var(--white); }
+  .exp-list { display: flex; flex-direction: column; gap: 0; }
+  .exp-row {
+    display: grid; grid-template-columns: 160px 1fr;
+    gap: 2.5rem; padding: 2.5rem 0;
+    border-bottom: 1px solid var(--gray-200);
+  }
+  .exp-row:first-child { border-top: 1px solid var(--gray-200); }
+  .exp-period { font-family: var(--mono); font-size: 11px; color: var(--gray-400); font-weight: 300; padding-top: 5px; }
+  .exp-company { font-family: var(--mono); font-size: 11px; color: var(--accent); font-weight: 500; letter-spacing: 0.05em; margin-bottom: 4px; }
+  .exp-title { font-family: var(--serif); font-size: 20px; font-weight: 400; color: var(--black); margin-bottom: 10px; }
+  .exp-bullets { list-style: none; display: flex; flex-direction: column; gap: 6px; }
+  .exp-bullets li { font-size: 13px; color: var(--gray-600); font-weight: 300; padding-left: 16px; position: relative; line-height: 1.6; }
+  .exp-bullets li::before { content: '—'; position: absolute; left: 0; color: var(--gray-400); font-size: 10px; top: 3px; }
+
+  /* ── PROJECTS ── */
+  #projects { background: var(--gray-100); }
+  .projects-list { display: flex; flex-direction: column; }
+  .project-row {
+    display: grid; grid-template-columns: 80px 1fr auto;
+    align-items: start; gap: 2rem; padding: 2.5rem 0;
+    border-bottom: 1px solid var(--gray-200);
+    transition: all 0.2s; cursor: default;
+  }
+  .project-row:first-child { border-top: 1px solid var(--gray-200); }
+  .project-row:hover { padding-left: 1rem; padding-right: 1rem; margin: 0 -1rem; background: var(--white); }
+  .project-index { font-family: var(--mono); font-size: 11px; font-weight: 300; color: var(--gray-400); padding-top: 4px; }
+  .project-category { font-family: var(--mono); font-size: 10px; font-weight: 500; color: var(--accent); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 6px; }
+  .project-title { font-family: var(--serif); font-size: 22px; font-weight: 400; color: var(--black); margin-bottom: 8px; line-height: 1.3; }
+  .project-desc { font-size: 14px; color: var(--gray-600); font-weight: 300; max-width: 580px; line-height: 1.7; }
+  .project-tags { display: flex; flex-direction: column; gap: 4px; align-items: flex-end; padding-top: 4px; }
+  .tag { font-family: var(--mono); font-size: 10px; font-weight: 400; color: var(--gray-600); letter-spacing: 0.05em; background: var(--gray-200); padding: 3px 10px; white-space: nowrap; }
+
+  /* ── PUBLICATIONS ── */
+  #publications { background: var(--white); }
+  .pub-list { display: flex; flex-direction: column; gap: 0; }
+  .pub-row {
+    display: grid; grid-template-columns: 60px 1fr auto;
+    gap: 2rem; padding: 2rem 0; border-bottom: 1px solid var(--gray-200); align-items: start;
+  }
+  .pub-row:first-child { border-top: 1px solid var(--gray-200); }
+  .pub-year { font-family: var(--mono); font-size: 11px; color: var(--gray-400); font-weight: 300; padding-top: 3px; }
+  .pub-journal { font-family: var(--mono); font-size: 10px; color: var(--accent); letter-spacing: 0.07em; text-transform: uppercase; margin-bottom: 5px; }
+  .pub-title { font-size: 15px; font-weight: 400; color: var(--black); margin-bottom: 4px; line-height: 1.4; }
+  .pub-doi { font-family: var(--mono); font-size: 11px; color: var(--gray-400); text-decoration: none; }
+  .pub-doi:hover { color: var(--accent); }
+  .pub-badge { font-family: var(--mono); font-size: 10px; color: var(--accent); background: var(--accent-light); padding: 3px 10px; white-space: nowrap; align-self: start; margin-top: 2px; }
+
+  /* ── ABOUT ── */
+  #about { background: var(--accent); }
+  #about .section-tag { color: rgba(255,255,255,0.4); }
+  #about .section-tag::before { background: rgba(255,255,255,0.4); }
+  #about .section-title { color: var(--white); }
+  .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; }
+  .about-text { font-size: 16px; font-weight: 300; color: rgba(255,255,255,0.75); line-height: 1.9; }
+  .about-text p + p { margin-top: 1.5rem; }
+  .about-specs { border-top: 1px solid rgba(255,255,255,0.12); margin-top: 2rem; }
+  .about-spec { display: flex; justify-content: space-between; padding: 1rem 0; border-bottom: 1px solid rgba(255,255,255,0.12); }
+  .about-spec-label { font-size: 12px; color: rgba(255,255,255,0.45); font-weight: 300; }
+  .about-spec-val { font-family: var(--mono); font-size: 12px; color: rgba(255,255,255,0.8); letter-spacing: 0.03em; text-align: right; }
+
+  /* ── SERVICES ── */
+  #services { background: var(--white); }
+  .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 2px; background: var(--gray-200); border: 1px solid var(--gray-200); }
+  .service-card { background: var(--white); padding: 2.5rem 2rem; }
+  .service-icon-box { width: 40px; height: 40px; border: 1px solid var(--gray-200); display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem; }
+  .service-icon-box svg { width: 20px; height: 20px; stroke: var(--accent); fill: none; stroke-width: 1.5; }
+  .service-name { font-family: var(--serif); font-size: 20px; font-weight: 400; color: var(--black); margin-bottom: 0.75rem; }
+  .service-desc { font-size: 13px; color: var(--gray-600); font-weight: 300; line-height: 1.8; }
+  .service-price { margin-top: 1.5rem; padding-top: 1.25rem; border-top: 1px solid var(--gray-200); font-family: var(--mono); font-size: 12px; color: var(--accent); }
+
+  /* ── CONTACT ── */
+  #contact { background: var(--white); border-top: 1px solid var(--gray-200); }
+  .contact-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; }
+  .contact-tagline { font-family: var(--serif); font-size: clamp(26px, 3vw, 40px); font-weight: 400; line-height: 1.3; color: var(--black); margin-bottom: 2rem; }
+  .contact-tagline em { font-style: italic; color: var(--accent); }
+  .contact-links { display: flex; flex-direction: column; gap: 12px; }
+  .contact-link {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1rem 1.25rem; border: 1px solid var(--gray-200);
+    text-decoration: none; transition: all 0.2s; color: var(--black);
+  }
+  .contact-link:hover { border-color: var(--black); }
+  .contact-link-label { font-size: 14px; font-weight: 400; }
+  .contact-link-val { font-family: var(--mono); font-size: 11px; color: var(--gray-600); }
+  .contact-arrow { color: var(--gray-400); }
+  .contact-form-title { font-size: 13px; font-weight: 400; color: var(--gray-600); margin-bottom: 1.5rem; }
+  .form-row { margin-bottom: 1rem; }
+  .form-row input, .form-row textarea, .form-row select {
+    width: 100%; padding: 12px 16px;
+    font-family: var(--sans); font-size: 14px; font-weight: 300;
+    background: var(--gray-100); border: 1px solid transparent;
+    color: var(--black); outline: none; resize: none; transition: border-color 0.2s;
+  }
+  .form-row input:focus, .form-row textarea:focus, .form-row select:focus { border-color: var(--black); background: var(--white); }
+  .form-row textarea { height: 120px; }
+  .form-submit {
+    width: 100%; font-family: var(--mono); font-size: 12px; font-weight: 500;
+    letter-spacing: 0.07em; text-transform: uppercase;
+    color: var(--white); background: var(--black); border: none; padding: 16px;
+    cursor: pointer; transition: background 0.2s;
+  }
+  .form-submit:hover { background: var(--accent); }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--black); color: rgba(255,255,255,0.4);
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 1.5rem 3rem; font-family: var(--mono); font-size: 11px; letter-spacing: 0.05em;
+    flex-wrap: wrap; gap: 8px;
+  }
+  footer span { color: rgba(255,255,255,0.7); }
+
+  /* ── ANIMATIONS ── */
+  .fade-up { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease, transform 0.7s ease; }
+  .fade-up.visible { opacity: 1; transform: none; }
+
+  @media (max-width: 768px) {
+    nav { padding: 1rem 1.5rem; }
+    .nav-links { display: none; }
+    section { padding: 4rem 1.5rem; }
+    .hero { padding: 7rem 1.5rem 3rem; }
+    .hero-bg-text { display: none; }
+    .about-grid, .contact-layout { grid-template-columns: 1fr; gap: 2.5rem; }
+    .exp-row { grid-template-columns: 1fr; gap: 0.5rem; }
+    .project-row { grid-template-columns: 50px 1fr; }
+    .project-tags { flex-direction: row; flex-wrap: wrap; align-items: flex-start; grid-column: 1 / -1; }
+    .pub-row { grid-template-columns: 1fr; gap: 6px; }
+    .pub-year { display: none; }
+    footer { flex-direction: column; text-align: center; padding: 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">A.CHELOEE-DARABI</div>
+  <ul class="nav-links">
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#publications">Publications</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <button class="nav-cta" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Hire Me</button>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg-text">FEM</div>
+  <div class="hero-content">
+    <div class="hero-eyebrow fade-up">
+      <div class="hero-eyebrow-line"></div>
+      <span>Simulation &amp; Development Engineer · Germany</span>
+    </div>
+    <h1 class="fade-up" style="transition-delay:0.1s">
+      Ali<br>Cheloee-<em>Darabi.</em>
+    </h1>
+    <p class="hero-desc fade-up" style="transition-delay:0.2s">
+      12+ years of expertise in structural FEM, fatigue &amp; damage-tolerance analysis, lightweight optimisation, and data-driven engineering workflows. Currently at Springer GmbH, Stuhr — open to new challenges.
+    </p>
+    <div class="hero-actions fade-up" style="transition-delay:0.3s">
+      <a href="#projects" class="btn-solid">View Projects</a>
+      <a href="#" class="btn-outline" id="cv-btn">Download CV</a>
+    </div>
+    <div class="hero-stats fade-up" style="transition-delay:0.4s">
+      <div>
+        <div class="hero-stat-num">12+</div>
+        <div class="hero-stat-label">Years experience</div>
+      </div>
+      <div>
+        <div class="hero-stat-num">3</div>
+        <div class="hero-stat-label">Peer-reviewed publications</div>
+      </div>
+      <div>
+        <div class="hero-stat-num">25%</div>
+        <div class="hero-stat-label">Weight reduction achieved</div>
+      </div>
+      <div>
+        <div class="hero-stat-num">40%</div>
+        <div class="hero-stat-label">Fatigue life improvement</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="section-header fade-up">
+    <div class="section-tag">Expertise</div>
+    <h2 class="section-title">Technical capabilities</h2>
+  </div>
+  <div class="skills-grid">
+    <div class="skill-item fade-up">
+      <div class="skill-num">01</div>
+      <div class="skill-name">FEM &amp; Structural Analysis</div>
+      <div class="skill-desc">Static, fatigue, and damage-tolerance simulation per FKM guidelines and DIN standards. Identification of critical failure zones and life assessment.</div>
+      <div class="skill-tools-list">
+        <span class="skill-tool">Abaqus</span>
+        <span class="skill-tool">ANSYS Mechanical</span>
+        <span class="skill-tool">Nastran / Patran</span>
+        <span class="skill-tool">HyperWorks · LS-DYNA · fe-safe</span>
+      </div>
+    </div>
+    <div class="skill-item fade-up" style="transition-delay:0.08s">
+      <div class="skill-num">02</div>
+      <div class="skill-name">Data-Driven Engineering</div>
+      <div class="skill-desc">Training ANN and deep learning models for mechanical property prediction and damage initiation. Inverse design approaches linking process parameters to target properties.</div>
+      <div class="skill-tools-list">
+        <span class="skill-tool">Python (ML / Automation)</span>
+        <span class="skill-tool">MATLAB</span>
+        <span class="skill-tool">ANN &amp; Deep Learning</span>
+        <span class="skill-tool">Design of Experiments (DoE)</span>
+      </div>
+    </div>
+    <div class="skill-item fade-up" style="transition-delay:0.16s">
+      <div class="skill-num">03</div>
+      <div class="skill-name">Lightweight &amp; Optimisation</div>
+      <div class="skill-desc">Component design and redesign for mass reduction without compromising structural performance. Lattice structures, topology optimisation, and crash energy absorption.</div>
+      <div class="skill-tools-list">
+        <span class="skill-tool">CAD / FEM-based development</span>
+        <span class="skill-tool">CATIA · SolidWorks</span>
+        <span class="skill-tool">Material &amp; process selection</span>
+        <span class="skill-tool">Cost reduction strategies</span>
+      </div>
+    </div>
+    <div class="skill-item fade-up" style="transition-delay:0.24s">
+      <div class="skill-num">04</div>
+      <div class="skill-name">Simulation Automation</div>
+      <div class="skill-desc">Fully automated simulation pipelines combining PFM, FEM, and post-processing. Significant reduction of analysis and development cycle time.</div>
+      <div class="skill-tools-list">
+        <span class="skill-tool">Python scripting</span>
+        <span class="skill-tool">PFM + FEM pipelines</span>
+        <span class="skill-tool">Parametric studies</span>
+        <span class="skill-tool">Automated reporting</span>
+      </div>
+    </div>
+    <div class="skill-item fade-up" style="transition-delay:0.32s">
+      <div class="skill-num">05</div>
+      <div class="skill-name">Testing &amp; Validation</div>
+      <div class="skill-desc">Test-simulation correlation, experimental structural testing, and microstructural analysis. Ensuring computed results match physical behaviour.</div>
+      <div class="skill-tools-list">
+        <span class="skill-tool">Mechanical testing methods</span>
+        <span class="skill-tool">SEM · EBSD microanalysis</span>
+        <span class="skill-tool">FKM-Richtlinie · DIN-Normen</span>
+        <span class="skill-tool">Fracture mechanics</span>
+      </div>
+    </div>
+    <div class="skill-item fade-up" style="transition-delay:0.4s">
+      <div class="skill-num">06</div>
+      <div class="skill-name">Languages</div>
+      <div class="skill-desc">Working fluently across international teams in engineering and research environments.</div>
+      <div class="skill-tools-list">
+        <span class="skill-tool">Persian — Native</span>
+        <span class="skill-tool">English — C1</span>
+        <span class="skill-tool">German — B2</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="section-header fade-up">
+    <div class="section-tag">Career</div>
+    <h2 class="section-title">Work experience</h2>
+  </div>
+  <div class="exp-list">
+    <div class="exp-row fade-up">
+      <div class="exp-period">05/2023 — Present</div>
+      <div>
+        <div class="exp-company">SPRINGER GMBH · STUHR, GERMANY</div>
+        <div class="exp-title">Calculation Engineer</div>
+        <ul class="exp-bullets">
+          <li>FEM analyses (static &amp; fatigue) per FKM guidelines; identification of critical component areas and reduction of failure risk</li>
+          <li>Weight reduction of large-scale gripper components by up to 25% while meeting all fatigue life requirements</li>
+          <li>Design optimisation: improved component fatigue life by up to 40% and reduced production costs by 15%</li>
+          <li>Technical coordination with departments, suppliers, and clients; shortened iteration cycles</li>
+          <li>Correlation of simulation results with experimental structural tests</li>
+        </ul>
+      </div>
+    </div>
+    <div class="exp-row fade-up" style="transition-delay:0.08s">
+      <div class="exp-period">12/2018 — 04/2023</div>
+      <div>
+        <div class="exp-company">UNIVERSITÄT STUTTGART · IMWF</div>
+        <div class="exp-title">Research Associate</div>
+        <ul class="exp-bullets">
+          <li>Developed a fully automated simulation workflow (PFM + FEM + post-processing) using Python</li>
+          <li>Trained ANN and deep learning models for predicting mechanical properties and damage initiation</li>
+          <li>Inverse design approaches linking process parameters to target material properties</li>
+          <li>Collaboration with research partners in funded projects; 3 peer-reviewed publications</li>
+        </ul>
+      </div>
+    </div>
+    <div class="exp-row fade-up" style="transition-delay:0.16s">
+      <div class="exp-period">10/2015 — 10/2018</div>
+      <div>
+        <div class="exp-company">BEHZAD DIESEL · TEHRAN, IRAN</div>
+        <div class="exp-title">Development Engineer</div>
+        <ul class="exp-bullets">
+          <li>CAD- and FEM-based component development; cost reduction through material and process optimisation</li>
+          <li>Damage-tolerance calculations and fatigue life assessments for safety-critical components</li>
+          <li>Coordination across design, manufacturing, and assembly teams; reduced development time by ~20%</li>
+        </ul>
+      </div>
+    </div>
+    <div class="exp-row fade-up" style="transition-delay:0.24s">
+      <div class="exp-period">04/2014 — 09/2015</div>
+      <div>
+        <div class="exp-company">IUST · LAB FOR FRACTURE MECHANICS &amp; FATIGUE, TEHRAN</div>
+        <div class="exp-title">Simulation &amp; Test Engineer</div>
+        <ul class="exp-bullets">
+          <li>FEM simulations for damage-tolerance analysis and experimental material testing</li>
+          <li>Test-simulation correlation to validate computational results</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="section-header fade-up">
+    <div class="section-tag">Portfolio</div>
+    <h2 class="section-title">Selected projects</h2>
+  </div>
+  <div class="projects-list">
+    <div class="project-row fade-up">
+      <div class="project-index">01</div>
+      <div class="project-content">
+        <div class="project-category">FEM · Lightweight Design · Industry</div>
+        <div class="project-title">Lightweight Redesign of Robotic Gripper Systems</div>
+        <div class="project-desc">Full redesign and FEM optimisation of large-scale industrial gripper components at Springer GmbH. Achieved 25% weight reduction and 15% cost reduction while improving structural performance and meeting all fatigue life requirements. Managed the complete development cycle from CAD through simulation, prototyping, and testing.</div>
+      </div>
+      <div class="project-tags">
+        <span class="tag">Abaqus</span>
+        <span class="tag">ANSYS</span>
+        <span class="tag">FKM</span>
+        <span class="tag">CAD</span>
+      </div>
+    </div>
+    <div class="project-row fade-up" style="transition-delay:0.05s">
+      <div class="project-index">02</div>
+      <div class="project-content">
+        <div class="project-category">FEM · Machine Learning · Research</div>
+        <div class="project-title">Data-Driven Material Modelling with FEM &amp; Deep Learning</div>
+        <div class="project-desc">Developed an automated simulation pipeline combining phase-field modelling (PFM) and FEM at Universität Stuttgart. Trained ANN and deep learning models to predict mechanical properties and damage initiation. Applied inverse design approaches to link process parameters to target material properties, significantly reducing experimental effort.</div>
+      </div>
+      <div class="project-tags">
+        <span class="tag">Python</span>
+        <span class="tag">Abaqus</span>
+        <span class="tag">ANN</span>
+        <span class="tag">PFM</span>
+      </div>
+    </div>
+    <div class="project-row fade-up" style="transition-delay:0.1s">
+      <div class="project-index">03</div>
+      <div class="project-content">
+        <div class="project-category">AI · Optimisation · Industry–Research</div>
+        <div class="project-title">AI-Driven Optimisation of Lattice Structures for Crash Applications</div>
+        <div class="project-desc">Cooperation project with InnovationsCampus Baden-Württemberg to develop lightweight-optimised vehicle structures. Combined parametric lattice designs, Abaqus FEM, and a machine learning pipeline to improve energy absorption behaviour for crash applications.</div>
+      </div>
+      <div class="project-tags">
+        <span class="tag">Abaqus</span>
+        <span class="tag">ML</span>
+        <span class="tag">Lattice</span>
+        <span class="tag">Python</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PUBLICATIONS -->
+<section id="publications">
+  <div class="section-header fade-up">
+    <div class="section-tag">Research</div>
+    <h2 class="section-title">Peer-reviewed publications</h2>
+  </div>
+  <div class="pub-list">
+    <div class="pub-row fade-up">
+      <div class="pub-year">2023</div>
+      <div>
+        <div class="pub-journal">Materials · MDPI</div>
+        <div class="pub-title">Hybrid Data-Driven Deep Learning Framework for Material Mechanical Properties Prediction</div>
+        <a href="https://doi.org/10.3390/ma16010447" class="pub-doi" target="_blank">DOI: 10.3390/ma16010447 →</a>
+      </div>
+      <div class="pub-badge">Q1 Journal</div>
+    </div>
+    <div class="pub-row fade-up" style="transition-delay:0.08s">
+      <div class="pub-year">2021</div>
+      <div>
+        <div class="pub-journal">Engineering Fracture Mechanics · Elsevier</div>
+        <div class="pub-title">Micromechanical Modeling of Damage Mechanisms in Dual-Phase Steel</div>
+        <a href="https://doi.org/10.1016/j.engfracmech.2020.107520" class="pub-doi" target="_blank">DOI: 10.1016/j.engfracmech.2020.107520 →</a>
+      </div>
+      <div class="pub-badge">Q1 Journal</div>
+    </div>
+    <div class="pub-row fade-up" style="transition-delay:0.16s">
+      <div class="pub-year">2020</div>
+      <div>
+        <div class="pub-journal">Metals and Materials International · Springer</div>
+        <div class="pub-title">Material Characterization and Damage Analysis</div>
+        <a href="https://doi.org/10.1007/s12540-020-00681-1" class="pub-doi" target="_blank">DOI: 10.1007/s12540-020-00681-1 →</a>
+      </div>
+      <div class="pub-badge">Q2 Journal</div>
+    </div>
+  </div>
+  <div style="margin-top: 2rem; fade-up">
+    <a href="https://scholar.google.com/citations?user=HwTuUgIAAAAJ" target="_blank" class="btn-outline">View all on Google Scholar →</a>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-header fade-up">
+    <div class="section-tag">About</div>
+    <h2 class="section-title">The engineer<br>behind the work</h2>
+  </div>
+  <div class="about-grid">
+    <div class="about-text fade-up">
+      <p>I'm a simulation and development engineer with over 12 years of experience in structural mechanics, fatigue analysis, and data-driven engineering. My career has taken me from fracture mechanics laboratories in Tehran to research at Universität Stuttgart and industrial development at Springer GmbH in Germany.</p>
+      <p>What drives me is the intersection of rigorous simulation and real engineering impact — whether that's cutting component weight by 25%, extending fatigue life by 40%, or building machine learning pipelines that reduce the need for physical tests. I approach every project from design concept through to validated results.</p>
+      <p>I'm currently open to senior engineering roles in structural simulation, R&amp;D, or product development, as well as freelance FEM and data-driven modelling projects.</p>
+    </div>
+    <div class="about-right fade-up" style="transition-delay:0.1s">
+      <div class="about-specs">
+        <div class="about-spec">
+          <span class="about-spec-label">Education</span>
+          <span class="about-spec-val">PhD cand. · M.Sc. · B.Sc.<br>Mechanical Engineering</span>
+        </div>
+        <div class="about-spec">
+          <span class="about-spec-label">PhD Focus</span>
+          <span class="about-spec-val">Data-Driven Material Modeling<br>FEM &amp; Machine Learning</span>
+        </div>
+        <div class="about-spec">
+          <span class="about-spec-label">Location</span>
+          <span class="about-spec-val">Stuhr, Germany</span>
+        </div>
+        <div class="about-spec">
+          <span class="about-spec-label">Languages</span>
+          <span class="about-spec-val">Persian · English C1 · German B2</span>
+        </div>
+        <div class="about-spec">
+          <span class="about-spec-label">Status</span>
+          <span class="about-spec-val">Open to opportunities</span>
+        </div>
+        <div class="about-spec">
+          <span class="about-spec-label">Freelance</span>
+          <span class="about-spec-val">Available</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="section-header fade-up">
+    <div class="section-tag">Services</div>
+    <h2 class="section-title">What I can do<br>for you</h2>
+  </div>
+  <div class="services-grid">
+    <div class="service-card fade-up">
+      <div class="service-icon-box">
+        <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+      </div>
+      <div class="service-name">FEM Simulation</div>
+      <div class="service-desc">Static, fatigue, and damage-tolerance analysis per FKM guidelines. Includes meshing, boundary conditions, result validation, and a full engineering report.</div>
+      <div class="service-price">From €400 / project</div>
+    </div>
+    <div class="service-card fade-up" style="transition-delay:0.08s">
+      <div class="service-icon-box">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 8v4l3 3"/></svg>
+      </div>
+      <div class="service-name">Fatigue &amp; Damage Tolerance</div>
+      <div class="service-desc">Life assessment of safety-critical components using fracture mechanics and FKM/DIN standards. Crack propagation analysis and remaining life estimation.</div>
+      <div class="service-price">From €500 / project</div>
+    </div>
+    <div class="service-card fade-up" style="transition-delay:0.16s">
+      <div class="service-icon-box">
+        <svg viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+      </div>
+      <div class="service-name">Simulation Automation</div>
+      <div class="service-desc">Python-based automation of FEM/PFM workflows, parametric studies, and post-processing pipelines. Significant reduction of engineering cycle time.</div>
+      <div class="service-price">From €300 / script</div>
+    </div>
+    <div class="service-card fade-up" style="transition-delay:0.24s">
+      <div class="service-icon-box">
+        <svg viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+      </div>
+      <div class="service-name">Data-Driven Modelling</div>
+      <div class="service-desc">ANN and ML models for material property prediction, design optimisation, and inverse engineering. Reduces experimental testing requirements substantially.</div>
+      <div class="service-price">From €500 / project</div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="contact-layout">
+    <div class="contact-left fade-up">
+      <div class="section-tag">Contact</div>
+      <div class="contact-tagline">Let's solve<br>something <em>together.</em></div>
+      <div class="contact-links">
+        <a href="mailto:ch.darabi@gmail.com" class="contact-link">
+          <span class="contact-link-label">Email</span>
+          <span class="contact-link-val">ch.darabi@gmail.com</span>
+          <span class="contact-arrow">→</span>
+        </a>
+        <a href="https://www.linkedin.com/in/ali-cheloee-darabi-61526665/" class="contact-link" target="_blank">
+          <span class="contact-link-label">LinkedIn</span>
+          <span class="contact-link-val">ali-cheloee-darabi</span>
+          <span class="contact-arrow">→</span>
+        </a>
+        <a href="https://scholar.google.com/citations?user=HwTuUgIAAAAJ" class="contact-link" target="_blank">
+          <span class="contact-link-label">Google Scholar</span>
+          <span class="contact-link-val">HwTuUgIAAAAJ</span>
+          <span class="contact-arrow">→</span>
+        </a>
+      </div>
+    </div>
+    <div class="contact-form-side fade-up" style="transition-delay:0.15s">
+      <div class="contact-form-title">Or send me a message directly</div>
+      <div class="form-row"><input type="text" placeholder="Your name"></div>
+      <div class="form-row"><input type="email" placeholder="Email address"></div>
+      <div class="form-row">
+        <select>
+          <option value="" disabled selected>Type of enquiry</option>
+          <option>Full-time / permanent role</option>
+          <option>Freelance — FEM Simulation</option>
+          <option>Freelance — Fatigue &amp; Damage Tolerance</option>
+          <option>Freelance — Simulation Automation</option>
+          <option>Freelance — Data-Driven Modelling</option>
+          <option>Research collaboration</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <div class="form-row"><textarea placeholder="Describe your project or opportunity…"></textarea></div>
+      <button class="form-submit" id="send-btn">Send Message →</button>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <span>Ali Cheloee-Darabi</span>
+  <span>Simulation &amp; Development Engineer · Stuhr, Germany</span>
+  <span>© 2025</span>
+</footer>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+  document.getElementById('cv-btn').addEventListener('click', e => {
+    e.preventDefault();
+    alert('Upload your CV PDF to your server and replace this link.');
+  });
+
+  document.getElementById('send-btn').addEventListener('click', () => {
+    alert('Connect this form to Formspree.io or EmailJS for real submissions — takes 5 minutes.');
+  });
+</script>
+</body>
+</html>

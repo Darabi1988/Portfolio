@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<title>Ali Cheloee-Darabi | Simulation Engineer</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=DM+Serif+Display&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+  --bg:#f8f8f6;
+  --surface:#ffffff;
+  --text:#111111;
+  --muted:#666666;
+  --border:#e6e6e2;
+  --accent:#183b63;
+  --accent-light:#eef4fb;
+
+  --sans:'Outfit',sans-serif;
+  --serif:'DM Serif Display',serif;
+  --mono:'DM Mono',monospace;
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  background:var(--bg);
+  color:var(--text);
+  font-family:var(--sans);
+  line-height:1.7;
+}
+
+/* =========================
+NAVBAR
+========================= */
+
+nav{
+  position:fixed;
+  top:0;
+  left:0;
+  right:0;
+
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+
+  padding:20px 48px;
+
+  background:rgba(255,255,255,0.92);
+
+  backdrop-filter:blur(14px);
+
+  border-bottom:1px solid var(--border);
+
+  z-index:9999;
+}
+
+.logo{
+  font-family:var(--mono);
+  font-size:13px;
+  letter-spacing:.08em;
+  color:var(--accent);
+}
+
+.nav-links{
+  display:flex;
+  align-items:center;
+  gap:34px;
+
+  list-style:none;
+}
+
+.nav-links a{
+  text-decoration:none;
+  color:var(--muted);
+
+  font-size:14px;
+
+  transition:.2s ease;
+}
+
+.nav-links a:hover{
+  color:var(--text);
+}
+
+/* =========================
+DROPDOWN
+========================= */
+
+.dropdown{
+  position:relative;
+}
+
+.dropdown-toggle{
+  display:flex;
+  align-items:center;
+  gap:5px;
+}
+
+.dropdown-menu{
+
+  position:absolute;
+
+  top:42px;
+  left:0;
+
+  min-width:320px;
+
+  background:var(--surface);
+
+  border:1px solid var(--border);
+
+  padding:12px 0;
+
+  display:flex;
+  flex-direction:column;
+
+  opacity:0;
+  visibility:hidden;
+
+  transform:translateY(10px);
+
+  transition:.22s ease;
+
+  z-index:9999;
+
+  box-shadow:
+  0 20px 50px rgba(0,0,0,.08);
+}
+
+.dropdown:hover .dropdown-menu{
+  opacity:1;
+  visibility:visible;
+  transform:translateY(0);
+}
+
+.dropdown-menu a{
+
+  padding:13px 20px;
+
+  color:var(--muted);
+
+  font-size:14px;
+
+  transition:.18s ease;
+}
+
+.dropdown-menu a:hover{
+  background:var(--accent-light);
+
+  color:var(--text);
+
+  padding-left:28px;
+}
+
+/* =========================
+HERO
+========================= */
+
+.hero{
+
+  min-height:100vh;
+
+  display:flex;
+  align-items:center;
+
+  padding:
+  140px
+  48px
+  80px;
+}
+
+.hero-content{
+  max-width:850px;
+}
+
+.eyebrow{
+
+  font-family:var(--mono);
+
+  font-size:12px;
+
+  letter-spacing:.12em;
+
+  color:var(--accent);
+
+  margin-bottom:28px;
+}
+
+.hero h1{
+
+  font-family:var(--serif);
+
+  font-size:82px;
+
+  line-height:1.05;
+
+  font-weight:400;
+
+  margin-bottom:26px;
+}
+
+.hero h1 em{
+  color:var(--accent);
+  font-style:italic;
+}
+
+.hero p{
+
+  max-width:650px;
+
+  color:var(--muted);
+
+  font-size:18px;
+
+  margin-bottom:40px;
+}
+
+.hero-buttons{
+  display:flex;
+  gap:18px;
+  flex-wrap:wrap;
+}
+
+.btn{
+
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+
+  padding:14px 28px;
+
+  text-decoration:none;
+
+  font-size:13px;
+
+  letter-spacing:.06em;
+
+  text-transform:uppercase;
+
+  border:1px solid var(--border);
+
+  transition:.2s ease;
+}
+
+.btn-dark{
+  background:#111;
+  color:white;
+  border-color:#111;
+}
+
+.btn-dark:hover{
+  background:var(--accent);
+}
+
+.btn-light{
+  background:white;
+  color:#111;
+}
+
+.btn-light:hover{
+  border-color:#111;
+}
+
+/* =========================
+SECTIONS
+========================= */
+
+section{
+  padding:100px 48px;
+}
+
+.section-tag{
+
+  font-family:var(--mono);
+
+  font-size:11px;
+
+  letter-spacing:.12em;
+
+  text-transform:uppercase;
+
+  color:#999;
+
+  margin-bottom:16px;
+}
+
+.section-title{
+
+  font-family:var(--serif);
+
+  font-size:52px;
+
+  font-weight:400;
+
+  margin-bottom:60px;
+}
+
+/* =========================
+SERVICES GRID
+========================= */
+
+.services-grid{
+
+  display:grid;
+
+  grid-template-columns:
+  repeat(auto-fit,minmax(280px,1fr));
+
+  gap:1px;
+
+  background:var(--border);
+
+  border:1px solid var(--border);
+}
+
+.service-card{
+
+  background:white;
+
+  padding:38px 32px;
+
+  transition:.2s ease;
+}
+
+.service-card:hover{
+  transform:translateY(-4px);
+}
+
+.service-card h3{
+
+  font-family:var(--serif);
+
+  font-size:28px;
+
+  margin-bottom:16px;
+
+  font-weight:400;
+}
+
+.service-card p{
+
+  color:var(--muted);
+
+  font-size:14px;
+}
+
+/* =========================
+CASE STUDY
+========================= */
+
+.case-list{
+  display:flex;
+  flex-direction:column;
+}
+
+.case-item{
+
+  display:grid;
+
+  grid-template-columns:
+  120px 1fr;
+
+  gap:40px;
+
+  padding:34px 0;
+
+  border-bottom:1px solid var(--border);
+}
+
+.case-number{
+
+  font-family:var(--mono);
+
+  color:#999;
+}
+
+.case-item h3{
+
+  font-family:var(--serif);
+
+  font-size:30px;
+
+  margin-bottom:12px;
+
+  font-weight:400;
+}
+
+.case-item p{
+  color:var(--muted);
+}
+
+/* =========================
+CONTACT
+========================= */
+
+.contact-box{
+
+  background:white;
+
+  border:1px solid var(--border);
+
+  padding:50px;
+}
+
+.contact-box h3{
+
+  font-family:var(--serif);
+
+  font-size:42px;
+
+  margin-bottom:20px;
+
+  font-weight:400;
+}
+
+.contact-box p{
+  color:var(--muted);
+  margin-bottom:30px;
+}
+
+.contact-links{
+
+  display:flex;
+  flex-direction:column;
+  gap:16px;
+}
+
+.contact-links a{
+
+  text-decoration:none;
+
+  color:#111;
+
+  padding:16px 20px;
+
+  border:1px solid var(--border);
+
+  transition:.2s ease;
+}
+
+.contact-links a:hover{
+  border-color:#111;
+}
+
+/* =========================
+FOOTER
+========================= */
+
+footer{
+
+  padding:28px 48px;
+
+  border-top:1px solid var(--border);
+
+  display:flex;
+
+  justify-content:space-between;
+
+  flex-wrap:wrap;
+
+  gap:10px;
+
+  font-size:13px;
+
+  color:#777;
+}
+
+/* =========================
+RESPONSIVE
+========================= */
+
+@media(max-width:900px){
+
+  nav{
+    padding:18px 24px;
+  }
+
+  .nav-links{
+    display:none;
+  }
+
+  .hero{
+    padding:120px 24px 60px;
+  }
+
+  .hero h1{
+    font-size:56px;
+  }
+
+  section{
+    padding:80px 24px;
+  }
+
+  .section-title{
+    font-size:40px;
+  }
+
+  .case-item{
+    grid-template-columns:1fr;
+    gap:14px;
+  }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- =========================
+NAVBAR
+========================= -->
+
+<nav>
+
+  <div class="logo">
+    A.CHELOEE-DARABI
+  </div>
+
+  <ul class="nav-links">
+
+    <li>
+      <a href="#about">About</a>
+    </li>
+
+    <li class="dropdown">
+
+      <a href="#" class="dropdown-toggle">
+        Services ▾
+      </a>
+
+      <div class="dropdown-menu">
+
+        <a href="services/modeling-simulation.html">
+          Modeling & Simulation
+        </a>
+
+        <a href="services/failure-analysis.html">
+          Failure Analysis
+        </a>
+
+        <a href="services/mechanical-testing.html">
+          Mechanical Testing
+        </a>
+
+        <a href="services/data-analysis.html">
+          Data Analysis
+        </a>
+
+        <a href="services/data-generation.html">
+          Data Generation & Analysis
+        </a>
+
+        <a href="services/ai-simulation.html">
+          AI in Simulation
+        </a>
+
+        <a href="services/software-development.html">
+          Software Development
+        </a>
+
+      </div>
+
+    </li>
+
+    <li>
+      <a href="#experience">Experience</a>
+    </li>
+
+    <li>
+      <a href="#case-studies">Case Studies</a>
+    </li>
+
+    <li>
+      <a href="#publications">Publications</a>
+    </li>
+
+    <li>
+      <a href="#contact">Contact</a>
+    </li>
+
+  </ul>
+
+</nav>
+
+<!-- =========================
+HERO
+========================= -->
+
+<section class="hero">
+
+  <div class="hero-content">
+
+    <div class="eyebrow">
+      SIMULATION & DEVELOPMENT ENGINEER
+    </div>
+
+    <h1>
+      Ali Cheloee-<em>Darabi.</em>
+    </h1>
+
+    <p>
+      Structural simulation engineer focused on FEM,
+      fatigue analysis, lightweight optimisation,
+      AI-driven engineering workflows, and software-based
+      simulation automation.
+    </p>
+
+    <div class="hero-buttons">
+
+      <a href="#case-studies" class="btn btn-dark">
+        View Projects
+      </a>
+
+      <a href="#contact" class="btn btn-light">
+        Contact
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- =========================
+ABOUT
+========================= -->
+
+<section id="about">
+
+  <div class="section-tag">
+    About
+  </div>
+
+  <h2 class="section-title">
+    Engineering with simulation,<br>
+    data and real-world validation.
+  </h2>
+
+  <p style="max-width:850px;color:#666;font-size:17px;">
+    I work at the intersection of structural mechanics,
+    FEM simulation, fatigue analysis, AI-assisted engineering,
+    and software automation. My background combines industrial
+    engineering development with academic research and
+    data-driven modelling.
+  </p>
+
+</section>
+
+<!-- =========================
+SERVICES
+========================= -->
+
+<section id="services">
+
+  <div class="section-tag">
+    Services
+  </div>
+
+  <h2 class="section-title">
+    Technical services
+  </h2>
+
+  <div class="services-grid">
+
+    <div class="service-card">
+      <h3>Modeling & Simulation</h3>
+      <p>
+        FEM simulation, structural analysis,
+        topology optimisation and engineering validation.
+      </p>
+    </div>
+
+    <div class="service-card">
+      <h3>Failure Analysis</h3>
+      <p>
+        Fatigue assessment, crack analysis,
+        fracture mechanics and damage tolerance.
+      </p>
+    </div>
+
+    <div class="service-card">
+      <h3>Mechanical Testing</h3>
+      <p>
+        Experimental validation,
+        material testing and simulation correlation.
+      </p>
+    </div>
+
+    <div class="service-card">
+      <h3>Data Analysis</h3>
+      <p>
+        Processing engineering datasets,
+        optimisation studies and reporting.
+      </p>
+    </div>
+
+    <div class="service-card">
+      <h3>AI in Simulation</h3>
+      <p>
+        Deep learning and ANN models
+        integrated into engineering workflows.
+      </p>
+    </div>
+
+    <div class="service-card">
+      <h3>Software Development</h3>
+      <p>
+        Python automation,
+        simulation pipelines and engineering tools.
+      </p>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- =========================
+CASE STUDIES
+========================= -->
+
+<section id="case-studies">
+
+  <div class="section-tag">
+    Case Studies
+  </div>
+
+  <h2 class="section-title">
+    Selected projects
+  </h2>
+
+  <div class="case-list">
+
+    <div class="case-item">
+
+      <div class="case-number">
+        01
+      </div>
+
+      <div>
+
+        <h3>
+          Lightweight redesign of robotic systems
+        </h3>
+
+        <p>
+          Reduced weight by 25% while improving fatigue
+          performance and reducing manufacturing costs.
+        </p>
+
+      </div>
+
+    </div>
+
+    <div class="case-item">
+
+      <div class="case-number">
+        02
+      </div>
+
+      <div>
+
+        <h3>
+          AI-assisted material prediction
+        </h3>
+
+        <p>
+          Combined FEM and machine learning
+          for property prediction and inverse design.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- =========================
+PUBLICATIONS
+========================= -->
+
+<section id="publications">
+
+  <div class="section-tag">
+    Publications
+  </div>
+
+  <h2 class="section-title">
+    Research & publications
+  </h2>
+
+  <p style="max-width:800px;color:#666;font-size:17px;">
+    Published research in FEM,
+    material modelling, damage analysis,
+    and AI-driven engineering systems.
+  </p>
+
+</section>
+
+<!-- =========================
+CONTACT
+========================= -->
+
+<section id="contact">
+
+  <div class="contact-box">
+
+    <h3>
+      Let’s build something meaningful.
+    </h3>
+
+    <p>
+      Open to engineering roles,
+      research collaboration,
+      and freelance simulation projects.
+    </p>
+
+    <div class="contact-links">
+
+      <a href="mailto:ch.darabi@gmail.com">
+        Email — ch.darabi@gmail.com
+      </a>
+
+      <a href="#">
+        LinkedIn
+      </a>
+
+      <a href="#">
+        Google Scholar
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- =========================
+FOOTER
+========================= -->
+
+<footer>
+
+  <div>
+    Ali Cheloee-Darabi
+  </div>
+
+  <div>
+    Simulation & Development Engineer
+  </div>
+
+  <div>
+    © 2026
+  </div>
+
+</footer>
+
+</body>
+</html>

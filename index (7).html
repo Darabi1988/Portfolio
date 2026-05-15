@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Ali Cheloee-Darabi | Structural Simulation Engineer</title>
+<meta name="description" content="Simulation & Development Engineer — FEM, fatigue analysis, data-driven engineering and automation. 12+ years. Based in Germany."/>
+<meta property="og:title" content="Ali Cheloee-Darabi | Simulation Engineer"/>
+<meta property="og:type" content="website"/>
+<link rel="canonical" href="https://nimble-lamington-0d9eb6.netlify.app/"/>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+/* ── HOME-ONLY STYLES ── */
+.hero {
+  min-height:100vh; display:flex; align-items:center;
+  padding:100px 0 64px;
+  background:
+    radial-gradient(ellipse 70% 60% at 95% 20%, #ddeaf766 0%, transparent 65%),
+    radial-gradient(ellipse 50% 50% at 5% 80%, #e8f0f844 0%, transparent 60%),
+    var(--bg);
+}
+.hero-grid { display:grid; grid-template-columns:1fr 420px; gap:64px; align-items:center; }
+.hero-tag {
+  font-family:var(--mono); font-size:11px; letter-spacing:.14em;
+  text-transform:uppercase; color:var(--accent);
+  display:flex; align-items:center; gap:10px; margin-bottom:22px;
+}
+.hero-tag::before { content:''; width:24px; height:1px; background:var(--accent); }
+.hero h1 { font-family:var(--serif); font-size:clamp(46px,5.5vw,72px); line-height:1.08; font-weight:400; margin-bottom:22px; }
+.hero h1 em { color:var(--accent); font-style:italic; }
+.hero-desc { font-size:17px; color:var(--muted); max-width:580px; line-height:1.85; margin-bottom:36px; }
+.hero-btns { display:flex; gap:14px; flex-wrap:wrap; margin-bottom:52px; }
+.stats-bar { display:flex; gap:36px; flex-wrap:wrap; padding-top:32px; border-top:1px solid var(--border); }
+.stat-n { font-family:var(--serif); font-size:38px; line-height:1; color:var(--accent); }
+.stat-l { font-size:12px; color:var(--muted); margin-top:5px; font-weight:300; }
+.hero-card { background:var(--surface); border:1px solid var(--border); padding:20px; }
+.hero-card img { width:100%; aspect-ratio:1; object-fit:cover; }
+.hero-card-footer { padding:14px 0 0; font-family:var(--mono); font-size:10px; color:var(--muted); display:flex; justify-content:space-between; }
+.hero-chips { display:flex; gap:6px; flex-wrap:wrap; margin-top:10px; }
+
+/* Workflow */
+#workflow { background:var(--accent); background-image:radial-gradient(ellipse 60% 80% at 90% 10%, #2a6496 0%, transparent 55%); }
+#workflow .sec-tag { color:rgba(255,255,255,.35); }
+#workflow .sec-title { color:white; margin-bottom:40px; }
+.workflow-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:1px; background:rgba(255,255,255,.1); border:1px solid rgba(255,255,255,.1); }
+.wf-item { background:var(--accent); padding:36px 28px; }
+.wf-n { font-family:var(--mono); font-size:10px; color:rgba(255,255,255,.3); margin-bottom:18px; letter-spacing:.06em; }
+.wf-name { font-family:var(--serif); font-size:20px; color:white; font-weight:400; margin-bottom:10px; }
+.wf-txt { font-size:13px; color:rgba(255,255,255,.6); line-height:1.75; }
+
+/* Expertise */
+#expertise { background:var(--surface); }
+.exp-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:1px; background:var(--border); border:1px solid var(--border); }
+.exp-card { background:var(--surface); padding:34px 28px; transition:.25s; cursor:default; }
+.exp-card:hover { background:var(--bg); }
+.exp-n { font-family:var(--mono); font-size:10px; color:#bbb; margin-bottom:18px; letter-spacing:.06em; }
+.exp-name { font-family:var(--serif); font-size:21px; font-weight:400; margin-bottom:10px; }
+.exp-txt { font-size:13px; color:var(--muted); line-height:1.75; margin-bottom:14px; }
+.exp-tools { display:flex; flex-direction:column; gap:3px; }
+.exp-t { font-family:var(--mono); font-size:11px; color:var(--muted); padding-left:12px; position:relative; }
+.exp-t::before { content:'—'; position:absolute; left:0; color:#ccc; font-size:10px; top:2px; }
+.exp-link { margin-top:16px; display:inline-block; font-family:var(--mono); font-size:10px; letter-spacing:.07em; text-transform:uppercase; color:var(--accent); border-bottom:1px solid var(--accent-light); padding-bottom:2px; transition:.2s; }
+.exp-link:hover { border-bottom-color:var(--accent); }
+
+@media(max-width:900px){
+  .hero-grid { grid-template-columns:1fr; }
+  .hero-card { display:none; }
+}
+</style>
+</head>
+<body>
+
+<!-- ══ NAV ══ -->
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-brand">
+      <div class="emblem"><svg viewBox="0 0 22 22" fill="none"><polygon points="11,2 20,7 20,15 11,20 2,15 2,7" stroke="white" stroke-width="1.2" fill="none"/><line x1="11" y1="2" x2="11" y2="20" stroke="white" stroke-width=".8" opacity=".5"/><line x1="2" y1="7" x2="20" y2="15" stroke="white" stroke-width=".8" opacity=".5"/><line x1="20" y1="7" x2="2" y2="15" stroke="white" stroke-width=".8" opacity=".5"/><circle cx="11" cy="11" r="2.2" fill="white"/></svg></div>
+      <div class="logo">A.CHELOEE-DARABI</div>
+    </a>
+    <ul class="nav-center">
+      <li><a href="about.html">About</a></li>
+      <li class="dropdown">
+        <a href="services/index.html" class="dropdown-toggle">Services <span class="chevron">▾</span></a>
+        <div class="dropdown-menu">
+          <a href="services/modeling.html">Modeling & Simulation</a>
+          <a href="services/failure.html">Failure Analysis</a>
+          <a href="services/testing.html">Mechanical Testing</a>
+          <div class="dropdown-divider"></div>
+          <a href="services/data-analysis.html">Data Analysis</a>
+          <a href="services/data-generation.html">Data Generation & Analysis</a>
+          <div class="dropdown-divider"></div>
+          <a href="services/ai-simulation.html">AI in Simulation</a>
+          <a href="services/software.html">Software Development</a>
+        </div>
+      </li>
+      <li><a href="experience.html">Experience</a></li>
+      <li><a href="case-studies.html">Case Studies</a></li>
+      <li><a href="publications.html">Publications</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <button class="nav-cta" onclick="location.href='contact.html'">Discuss a Project</button>
+  </div>
+</nav>
+
+<!-- ══ HERO ══ -->
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <div class="hero-tag">Simulation & Development Engineer · Stuhr, Germany</div>
+        <h1>Bridging <em>Simulation</em>,<br>Machine Learning,<br>and Engineering.</h1>
+        <p class="hero-desc">12+ years across industrial R&D, academic research, and product development. Expert in FEM, fatigue & damage-tolerance analysis, lightweight optimisation, and data-driven automated engineering workflows.</p>
+        <div class="hero-btns">
+          <a href="case-studies.html" class="btn-solid">Explore Case Studies</a>
+          <a href="#" class="btn-outline cv-btn">Download CV</a>
+        </div>
+        <div class="stats-bar">
+          <div><div class="stat-n">12+</div><div class="stat-l">Years Experience</div></div>
+          <div><div class="stat-n">3</div><div class="stat-l">Peer-Reviewed Publications</div></div>
+          <div><div class="stat-n">25%</div><div class="stat-l">Weight Reduction Achieved</div></div>
+          <div><div class="stat-n">40%</div><div class="stat-l">Fatigue Life Improvement</div></div>
+        </div>
+      </div>
+      <div class="hero-card">
+        <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?q=80&w=900&auto=format&fit=crop" alt="FEM structural simulation" width="420" height="420" loading="eager">
+        <div class="hero-card-footer"><span>FEM / STRUCTURAL ANALYSIS</span><span>GERMANY</span></div>
+        <div class="hero-chips">
+          <span class="chip">Abaqus</span><span class="chip">ANSYS</span><span class="chip">Python</span><span class="chip">FKM</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ WORKFLOW ══ -->
+<section id="workflow">
+  <div class="wrap">
+    <div class="sec-tag fade-up">Workflow</div>
+    <h2 class="sec-title fade-up">From problem to<br>validated solution.</h2>
+    <div class="workflow-grid">
+      <div class="wf-item fade-up"><div class="wf-n">01</div><div class="wf-name">Technical Review</div><p class="wf-txt">Geometry, loads, constraints, material data, and standards. NDA available for sensitive projects.</p></div>
+      <div class="wf-item fade-up" style="transition-delay:.07s"><div class="wf-n">02</div><div class="wf-name">Simulation Strategy</div><p class="wf-txt">Software selection, mesh approach, validation method, applicable standards (FKM, DIN).</p></div>
+      <div class="wf-item fade-up" style="transition-delay:.14s"><div class="wf-n">03</div><div class="wf-name">Analysis & Optimisation</div><p class="wf-txt">FEM execution, parametric studies, automation pipelines, iterative engineering evaluation.</p></div>
+      <div class="wf-item fade-up" style="transition-delay:.21s"><div class="wf-n">04</div><div class="wf-name">Validation & Reporting</div><p class="wf-txt">Engineering report, result interpretation, design recommendations, reproducible documentation.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ EXPERTISE ══ -->
+<section id="expertise">
+  <div class="wrap">
+    <div class="sec-tag fade-up">Technical Capabilities</div>
+    <h2 class="sec-title fade-up">What I specialise in.</h2>
+    <div class="exp-grid">
+      <div class="exp-card fade-up">
+        <div class="exp-n">01</div>
+        <div class="exp-name">Structural FEM</div>
+        <p class="exp-txt">Static, fatigue, and damage-tolerance analysis per FKM & DIN standards.</p>
+        <div class="exp-tools"><span class="exp-t">Abaqus · ANSYS</span><span class="exp-t">Nastran · HyperWorks</span><span class="exp-t">LS-DYNA · fe-safe</span></div>
+        <a href="services/modeling.html" class="exp-link">Learn more →</a>
+      </div>
+      <div class="exp-card fade-up" style="transition-delay:.07s">
+        <div class="exp-n">02</div>
+        <div class="exp-name">Engineering Automation</div>
+        <p class="exp-txt">Python-based automation of FEM workflows, parametric studies, and post-processing.</p>
+        <div class="exp-tools"><span class="exp-t">Python · MATLAB</span><span class="exp-t">PFM + FEM pipelines</span><span class="exp-t">Automated reporting</span></div>
+        <a href="services/software.html" class="exp-link">Learn more →</a>
+      </div>
+      <div class="exp-card fade-up" style="transition-delay:.14s">
+        <div class="exp-n">03</div>
+        <div class="exp-name">Data-Driven Modelling</div>
+        <p class="exp-txt">ANN & deep learning for material prediction, damage initiation, and inverse design.</p>
+        <div class="exp-tools"><span class="exp-t">ANN · Deep Learning</span><span class="exp-t">DoE</span><span class="exp-t">Inverse design</span></div>
+        <a href="services/ai-simulation.html" class="exp-link">Learn more →</a>
+      </div>
+      <div class="exp-card fade-up" style="transition-delay:.21s">
+        <div class="exp-n">04</div>
+        <div class="exp-name">Lightweight Design</div>
+        <p class="exp-txt">Mass & cost reduction without compromising fatigue life. Full CAD → FEM → test cycle.</p>
+        <div class="exp-tools"><span class="exp-t">CATIA V5 · SolidWorks</span><span class="exp-t">Topology optimisation</span><span class="exp-t">Material selection</span></div>
+        <a href="services/modeling.html" class="exp-link">Learn more →</a>
+      </div>
+      <div class="exp-card fade-up" style="transition-delay:.28s">
+        <div class="exp-n">05</div>
+        <div class="exp-name">Failure Analysis</div>
+        <p class="exp-txt">Fracture mechanics, crack propagation, remaining life estimation per FKM/DIN.</p>
+        <div class="exp-tools"><span class="exp-t">fe-safe · Abaqus</span><span class="exp-t">FKM-Richtlinie</span><span class="exp-t">Exp. correlation</span></div>
+        <a href="services/failure.html" class="exp-link">Learn more →</a>
+      </div>
+      <div class="exp-card fade-up" style="transition-delay:.35s">
+        <div class="exp-n">06</div>
+        <div class="exp-name">Testing & Validation</div>
+        <p class="exp-txt">Test-simulation correlation, experimental structural testing, microstructural characterisation.</p>
+        <div class="exp-tools"><span class="exp-t">SEM · EBSD</span><span class="exp-t">Mechanical testing</span><span class="exp-t">DIN-Normen</span></div>
+        <a href="services/testing.html" class="exp-link">Learn more →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ CONTACT STRIP ══ -->
+<div class="contact-strip">
+  <h2>Let's solve something <em>together.</em></h2>
+  <p>Open to senior engineering roles and freelance simulation projects.</p>
+  <a href="contact.html" class="btn-solid" style="border-color:white;background:white;color:var(--accent);">Get in Touch</a>
+</div>
+
+<!-- ══ FOOTER ══ -->
+<footer>
+  <div class="footer-inner">
+    <span>Ali Cheloee-Darabi</span>
+    <div class="footer-links">
+      <a href="about.html">About</a>
+      <a href="services/index.html">Services</a>
+      <a href="case-studies.html">Case Studies</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <span>© 2026</span>
+  </div>
+</footer>
+
+<script src="nav.js"></script>
+</body>
+</html>

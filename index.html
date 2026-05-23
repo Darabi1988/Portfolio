@@ -8,7 +8,6 @@
 <meta property="og:title" content="Ali Cheloee-Darabi | Simulation Engineer"/>
 <meta property="og:description" content="FEM · Structural Analysis · Data-Driven Methods · Germany"/>
 <meta property="og:type" content="website"/>
-<link rel="canonical" href="https://nimble-lamington-0d9eb6.netlify.app/"/>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
@@ -32,7 +31,7 @@ a{text-decoration:none;color:inherit;}
 ::-webkit-scrollbar-thumb{background:var(--border);}
 .wrap{width:min(var(--max),calc(100% - 48px));margin:0 auto;}
 
-/* ══ PAGE SECTIONS (shown/hidden by JS) ══ */
+/* ══ PAGE SECTIONS ══ */
 .page{display:none;}
 .page.active{display:block;}
 
@@ -80,12 +79,10 @@ nav{
 /* ══════════════════════════════════════════
    BUTTONS
 ══════════════════════════════════════════ */
-.btn-solid{font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;padding:13px 26px;background:var(--text);color:white;border:1px solid var(--text);transition:.2s;display:inline-block;cursor:pointer;}
+.btn-solid{font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;padding:13px 26px;background:var(--text);color:white;border:1px solid var(--text);transition:.2s;display:inline-block;cursor:pointer;text-align:center;}
 .btn-solid:hover{background:var(--accent);border-color:var(--accent);}
-.btn-outline{font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;padding:13px 26px;background:transparent;color:var(--text);border:1px solid var(--border);transition:.2s;display:inline-block;cursor:pointer;}
+.btn-outline{font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;padding:13px 26px;background:transparent;color:var(--text);border:1px solid var(--border);transition:.2s;display:inline-block;cursor:pointer;text-align:center;}
 .btn-outline:hover{border-color:var(--text);}
-.btn-accent{font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;padding:13px 26px;background:var(--accent);color:white;border:1px solid var(--accent);transition:.2s;display:inline-block;cursor:pointer;}
-.btn-accent:hover{background:var(--accent2);border-color:var(--accent2);}
 
 /* ══════════════════════════════════════════
    SECTION BASE
@@ -93,20 +90,6 @@ nav{
 section{padding:88px 0;}
 .sec-tag{font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:#999;margin-bottom:12px;}
 .sec-title{font-family:var(--serif);font-size:clamp(30px,4vw,48px);font-weight:400;line-height:1.2;margin-bottom:52px;}
-
-/* ══════════════════════════════════════════
-   PAGE HERO (inner pages)
-══════════════════════════════════════════ */
-.page-hero{
-  padding:140px 0 72px;
-  background:radial-gradient(ellipse 60% 80% at 95% 10%,#ddeaf766 0%,transparent 60%),var(--bg);
-  border-bottom:1px solid var(--border);
-}
-.page-hero-tag{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);display:flex;align-items:center;gap:10px;margin-bottom:18px;}
-.page-hero-tag::before{content:'';width:22px;height:1px;background:var(--accent);}
-.page-hero h1{font-family:var(--serif);font-size:clamp(38px,5vw,64px);font-weight:400;line-height:1.1;margin-bottom:18px;}
-.page-hero h1 em{font-style:italic;color:var(--accent);}
-.page-hero-desc{font-size:17px;color:var(--muted);max-width:580px;line-height:1.85;}
 
 /* ══════════════════════════════════════════
    HOME — HERO
@@ -126,14 +109,14 @@ section{padding:88px 0;}
 .stats-bar{display:flex;gap:36px;flex-wrap:wrap;padding-top:32px;border-top:1px solid var(--border);}
 .stat-n{font-family:var(--serif);font-size:38px;line-height:1;color:var(--accent);}
 .stat-l{font-size:12px;color:var(--muted);margin-top:5px;font-weight:300;}
-.hero-card{background:var(--surface);border:1px solid var(--border);padding:20px;}
-.hero-card img{width:100%;aspect-ratio:1;object-fit:cover;}
+.hero-card{background:var(--surface);border:1px solid var(--border);padding:20px;box-shadow: 0 15px 45px rgba(0,0,0,0.05);}
+.hero-card img{width:100%;aspect-ratio:1;object-fit:cover;object-position: top; filter: contrast(1.02);}
 .hero-card-footer{padding:14px 0 0;font-family:var(--mono);font-size:10px;color:var(--muted);display:flex;justify-content:space-between;}
 .hero-chips{display:flex;gap:6px;flex-wrap:wrap;margin-top:10px;}
 .chip{font-family:var(--mono);font-size:10px;letter-spacing:.05em;padding:4px 10px;background:var(--accent-light);color:var(--accent);text-transform:uppercase;}
 
 /* ══════════════════════════════════════════
-   WORKFLOW
+   OTHER COMPONENTS (Workflow, Case Studies, etc.)
 ══════════════════════════════════════════ */
 .workflow-section{background:var(--accent);background-image:radial-gradient(ellipse 60% 80% at 90% 10%,#2a6496 0%,transparent 55%);}
 .workflow-section .sec-tag{color:rgba(255,255,255,.35);}
@@ -144,14 +127,10 @@ section{padding:88px 0;}
 .wf-name{font-family:var(--serif);font-size:20px;color:white;font-weight:400;margin-bottom:10px;}
 .wf-txt{font-size:13px;color:rgba(255,255,255,.6);line-height:1.75;}
 
-/* ══════════════════════════════════════════
-   CASE STUDIES
-══════════════════════════════════════════ */
 .case-study{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:start;padding:52px 0;border-top:1px solid var(--border);}
 .case-study:last-child{border-bottom:1px solid var(--border);}
 .case-study.rev{grid-template-columns:1.1fr .9fr;}
 .case-study.rev .case-img{order:2;}
-.case-study.rev .case-body{order:1;}
 .case-img{background:var(--warm);border:1px solid var(--border);padding:16px;}
 .case-img img{width:100%;aspect-ratio:4/3;object-fit:cover;}
 .case-cat{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:12px;}
@@ -163,140 +142,33 @@ section{padding:88px 0;}
 .techs{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:18px;}
 .tch{font-family:var(--mono);font-size:10px;padding:4px 11px;border:1px solid var(--border);color:var(--muted);}
 
-/* ══════════════════════════════════════════
-   EXPERTISE GRID
-══════════════════════════════════════════ */
 .exp-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1px;background:var(--border);border:1px solid var(--border);}
-.exp-card{background:var(--surface);padding:34px 28px;transition:.25s;cursor:default;}
-.exp-card:hover{background:var(--bg);}
-.exp-n{font-family:var(--mono);font-size:10px;color:#bbb;margin-bottom:18px;letter-spacing:.06em;}
+.exp-card{background:var(--surface);padding:34px 28px;transition:.25s;}
 .exp-name{font-family:var(--serif);font-size:21px;font-weight:400;margin-bottom:10px;}
 .exp-txt{font-size:13px;color:var(--muted);line-height:1.75;margin-bottom:14px;}
 .exp-tools{display:flex;flex-direction:column;gap:3px;}
 .exp-t{font-family:var(--mono);font-size:11px;color:var(--muted);padding-left:12px;position:relative;}
-.exp-t::before{content:'—';position:absolute;left:0;color:#ccc;font-size:10px;top:2px;}
-.exp-query{margin-top:16px;display:inline-block;font-family:var(--mono);font-size:10px;letter-spacing:.07em;text-transform:uppercase;color:var(--accent);border:none;border-bottom:1px solid var(--accent-light);padding-bottom:2px;background:none;cursor:pointer;transition:.2s;}
-.exp-query:hover{border-bottom-color:var(--accent);}
+.exp-t::before{content:'—';position:absolute;left:0;color:#ccc;top:2px;}
 
-/* ══════════════════════════════════════════
-   EXPERIENCE (career)
-══════════════════════════════════════════ */
-.career-list{display:flex;flex-direction:column;}
 .career-row{display:grid;grid-template-columns:170px 1fr;gap:36px;padding:32px 0;border-top:1px solid var(--border);}
-.career-row:last-child{border-bottom:1px solid var(--border);}
-.career-period{font-family:var(--mono);font-size:11px;color:var(--muted);padding-top:3px;font-weight:300;}
-.career-co{font-family:var(--mono);font-size:10px;color:var(--accent);text-transform:uppercase;letter-spacing:.06em;margin-bottom:5px;}
+.career-period{font-family:var(--mono);font-size:11px;color:var(--muted);}
+.career-co{font-family:var(--mono);font-size:10px;color:var(--accent);text-transform:uppercase;margin-bottom:5px;}
 .career-role{font-family:var(--serif);font-size:21px;font-weight:400;margin-bottom:12px;}
 .career-ul{list-style:none;display:flex;flex-direction:column;gap:6px;}
-.career-ul li{font-size:13px;color:var(--muted);padding-left:16px;position:relative;line-height:1.65;}
-.career-ul li::before{content:'—';position:absolute;left:0;color:#ccc;top:2px;font-size:10px;}
+.career-ul li{font-size:13px;color:var(--muted);padding-left:16px;position:relative;}
+.career-ul li::before{content:'—';position:absolute;left:0;color:#ccc;}
 
-/* ══════════════════════════════════════════
-   PUBLICATIONS
-══════════════════════════════════════════ */
-.pub-list{display:flex;flex-direction:column;}
-.pub-row{display:grid;grid-template-columns:52px 1fr 80px;gap:24px;padding:24px 0;border-top:1px solid var(--border);align-items:start;}
-.pub-row:last-child{border-bottom:1px solid var(--border);}
-.pub-yr{font-family:var(--mono);font-size:11px;color:#bbb;padding-top:2px;}
-.pub-jnl{font-family:var(--mono);font-size:10px;color:var(--accent);text-transform:uppercase;letter-spacing:.07em;margin-bottom:5px;}
-.pub-ttl{font-size:15px;font-weight:500;margin-bottom:5px;line-height:1.45;}
+.pub-row{display:grid;grid-template-columns:52px 1fr 80px;gap:24px;padding:24px 0;border-top:1px solid var(--border);}
+.pub-yr{font-family:var(--mono);font-size:11px;color:#bbb;}
+.pub-jnl{font-family:var(--mono);font-size:10px;color:var(--accent);text-transform:uppercase;margin-bottom:5px;}
+.pub-ttl{font-size:15px;font-weight:500;margin-bottom:5px;}
 .pub-doi{font-family:var(--mono);font-size:11px;color:var(--muted);transition:.2s;}
 .pub-doi:hover{color:var(--accent);}
-.pub-badge{font-family:var(--mono);font-size:10px;background:var(--accent-light);color:var(--accent);padding:4px 10px;text-align:center;align-self:flex-start;}
+.pub-badge{font-family:var(--mono);font-size:10px;background:var(--accent-light);color:var(--accent);padding:4px 10px;text-align:center;}
 
-/* ══════════════════════════════════════════
-   SERVICES (overview cards)
-══════════════════════════════════════════ */
-.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1px;background:var(--border);border:1px solid var(--border);}
-.svc-card{background:var(--surface);padding:36px 28px;transition:.25s;cursor:pointer;}
-.svc-card:hover{background:var(--bg);transform:translateY(-2px);}
-.svc-n{font-family:var(--mono);font-size:10px;color:#bbb;margin-bottom:18px;letter-spacing:.06em;}
-.svc-icon{width:44px;height:44px;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;margin-bottom:18px;}
-.svc-icon svg{width:22px;height:22px;stroke:var(--accent);fill:none;stroke-width:1.5;}
-.svc-name{font-family:var(--serif);font-size:22px;font-weight:400;margin-bottom:10px;}
-.svc-txt{font-size:13px;color:var(--muted);line-height:1.8;margin-bottom:18px;}
-.svc-link{font-family:var(--mono);font-size:10px;text-transform:uppercase;letter-spacing:.07em;color:var(--accent);display:inline-flex;align-items:center;gap:6px;}
-
-/* ══════════════════════════════════════════
-   ABOUT
-══════════════════════════════════════════ */
-.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start;}
-.about-txt{font-size:16px;color:var(--muted);line-height:1.9;}
-.about-txt p+p{margin-top:1.4rem;}
-.about-specs{border-top:1px solid var(--border);margin-top:2rem;}
-.about-spec{display:flex;justify-content:space-between;padding:.9rem 0;border-bottom:1px solid var(--border);}
-.about-spec-l{font-size:12px;color:var(--muted);font-weight:300;}
-.about-spec-v{font-family:var(--mono);font-size:12px;color:var(--text);text-align:right;}
-
-/* ══════════════════════════════════════════
-   CONTACT PAGE + CHAT
-══════════════════════════════════════════ */
-.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start;}
-.contact-tagline{font-family:var(--serif);font-size:clamp(26px,3.5vw,40px);line-height:1.25;margin:14px 0 16px;}
-.contact-tagline em{font-style:italic;color:var(--accent);}
-.contact-txt{font-size:15px;color:var(--muted);line-height:1.8;margin-bottom:28px;}
-.contact-cards{display:flex;flex-direction:column;gap:9px;}
-.ccard{display:flex;justify-content:space-between;align-items:center;padding:14px 16px;border:1px solid var(--border);transition:.2s;color:var(--text);cursor:pointer;}
-.ccard:hover{border-color:var(--text);}
-.ccard-lbl{font-family:var(--mono);font-size:10px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin-bottom:2px;}
-.ccard-val{font-size:14px;font-weight:500;}
-.ccard-arrow{color:var(--muted);font-size:14px;}
-/* Chat */
-.chat-box{background:var(--surface);border:1px solid var(--border);display:flex;flex-direction:column;height:480px;}
-.chat-header{padding:14px 18px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:10px;}
-.chat-dot{width:8px;height:8px;border-radius:50%;background:#4ade80;flex-shrink:0;}
-.chat-hname{font-family:var(--mono);font-size:12px;color:var(--accent);font-weight:500;}
-.chat-hstatus{font-family:var(--mono);font-size:10px;color:#aaa;margin-left:auto;}
-.chat-messages{flex:1;overflow-y:auto;padding:16px;display:flex;flex-direction:column;gap:10px;}
-.chat-messages::-webkit-scrollbar{width:3px;}
-.chat-messages::-webkit-scrollbar-thumb{background:var(--border);}
-.msg{max-width:82%;font-size:13px;line-height:1.65;padding:10px 14px;}
-.msg.bot{background:var(--accent-light);color:var(--text);align-self:flex-start;border-radius:0 8px 8px 8px;}
-.msg.user{background:var(--accent);color:white;align-self:flex-end;border-radius:8px 0 8px 8px;}
-.msg-time{font-family:var(--mono);font-size:9px;color:#bbb;margin-top:4px;}
-.chat-typing{display:none;align-items:center;gap:4px;padding:10px 14px;align-self:flex-start;}
-.chat-typing.show{display:flex;}
-.dot-anim{width:6px;height:6px;border-radius:50%;background:var(--muted);animation:bounce .9s infinite;}
-.dot-anim:nth-child(2){animation-delay:.15s;}
-.dot-anim:nth-child(3){animation-delay:.3s;}
-@keyframes bounce{0%,60%,100%{transform:translateY(0)}30%{transform:translateY(-5px)}}
-.chat-quick{padding:10px 16px;border-top:1px solid var(--border);display:flex;gap:6px;flex-wrap:wrap;}
-.quick-btn{font-family:var(--mono);font-size:10px;padding:5px 12px;background:var(--accent-light);color:var(--accent);border:none;cursor:pointer;transition:.2s;letter-spacing:.04em;}
-.quick-btn:hover{background:var(--accent);color:white;}
-.chat-input-row{display:flex;border-top:1px solid var(--border);}
-.chat-input{flex:1;padding:13px 16px;border:none;outline:none;font-family:var(--sans);font-size:14px;background:transparent;color:var(--text);}
-.chat-send{padding:0 18px;background:var(--accent);color:white;border:none;cursor:pointer;font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;transition:.2s;}
-.chat-send:hover{background:var(--accent2);}
-
-/* ══════════════════════════════════════════
-   CONTACT STRIP
-══════════════════════════════════════════ */
 .contact-strip{background:var(--accent);padding:72px 0;text-align:center;}
 .contact-strip h2{font-family:var(--serif);font-size:clamp(28px,4vw,44px);color:white;margin-bottom:14px;}
-.contact-strip h2 em{font-style:italic;}
 .contact-strip p{font-size:15px;color:rgba(255,255,255,.7);margin-bottom:28px;}
-
-/* ══════════════════════════════════════════
-   SERVICE DETAIL PAGE
-══════════════════════════════════════════ */
-.service-detail-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start;}
-.sd-list{list-style:none;display:flex;flex-direction:column;gap:10px;margin-top:12px;}
-.sd-list li{font-size:14px;color:var(--muted);padding-left:18px;position:relative;line-height:1.7;}
-.sd-list li::before{content:'—';position:absolute;left:0;color:#ccc;font-size:10px;top:3px;}
-.sd-sidebar{background:var(--surface);border:1px solid var(--border);padding:28px;}
-.sd-sidebar h4{font-family:var(--serif);font-size:20px;margin-bottom:16px;}
-.sd-tools{display:flex;flex-direction:column;gap:8px;}
-.sd-tool{font-family:var(--mono);font-size:12px;padding:8px 14px;background:var(--accent-light);color:var(--accent);}
-
-/* ══════════════════════════════════════════
-   FOOTER
-══════════════════════════════════════════ */
-footer{background:#0c0c0a;padding:22px 0;font-family:var(--mono);font-size:11px;letter-spacing:.05em;}
-.footer-inner{width:min(var(--max),calc(100% - 48px));margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;color:rgba(255,255,255,.35);}
-.footer-inner span{color:rgba(255,255,255,.65);}
-.footer-links{display:flex;gap:20px;}
-.footer-links a{color:rgba(255,255,255,.35);font-size:11px;transition:.2s;cursor:pointer;}
-.footer-links a:hover{color:rgba(255,255,255,.65);}
 
 /* ══════════════════════════════════════════
    ANIMATIONS
@@ -305,29 +177,23 @@ footer{background:#0c0c0a;padding:22px 0;font-family:var(--mono);font-size:11px;
 .fade-up.on{opacity:1;transform:none;}
 
 /* ══════════════════════════════════════════
-   RESPONSIVE
+   FOOTER
 ══════════════════════════════════════════ */
+footer{background:#0c0c0a;padding:22px 0;font-family:var(--mono);font-size:11px;color:rgba(255,255,255,0.35);}
+.footer-inner{width:min(var(--max),calc(100% - 48px));margin:0 auto;display:flex;justify-content:space-between;align-items:center;}
+
 @media(max-width:900px){
   .nav-center{display:none;}
   .hero-grid{grid-template-columns:1fr;}
-  .hero-card{display:none;}
-  .case-study,.case-study.rev{grid-template-columns:1fr;gap:24px;}
-  .case-study.rev .case-img,.case-study.rev .case-body{order:unset;}
-  .about-grid,.contact-grid,.service-detail-grid{grid-template-columns:1fr;gap:36px;}
-  .career-row{grid-template-columns:1fr;gap:6px;}
-  .pub-row{grid-template-columns:1fr;gap:6px;}
-  .pub-yr,.pub-badge{display:none;}
-  section{padding:60px 0;}
-  .wrap{width:calc(100% - 32px);}
-  .page-hero{padding:110px 0 52px;}
+  .hero-card{max-width:400px; margin: 0 auto 40px;}
+  .case-study{grid-template-columns:1fr;}
+  .career-row{grid-template-columns:1fr; gap: 10px;}
 }
 </style>
 </head>
 <body>
 
-<!-- ══════════════════════════════════════════
-     NAV (shared across all pages)
-══════════════════════════════════════════ -->
+<!-- NAV -->
 <nav>
   <div class="nav-inner">
     <div class="nav-brand" onclick="showPage('home')">
@@ -335,8 +201,6 @@ footer{background:#0c0c0a;padding:22px 0;font-family:var(--mono);font-size:11px;
         <svg viewBox="0 0 22 22" fill="none">
           <polygon points="11,2 20,7 20,15 11,20 2,15 2,7" stroke="white" stroke-width="1.2" fill="none"/>
           <line x1="11" y1="2" x2="11" y2="20" stroke="white" stroke-width=".8" opacity=".5"/>
-          <line x1="2" y1="7" x2="20" y2="15" stroke="white" stroke-width=".8" opacity=".5"/>
-          <line x1="20" y1="7" x2="2" y2="15" stroke="white" stroke-width=".8" opacity=".5"/>
           <circle cx="11" cy="11" r="2.2" fill="white"/>
         </svg>
       </div>
@@ -345,20 +209,6 @@ footer{background:#0c0c0a;padding:22px 0;font-family:var(--mono);font-size:11px;
 
     <ul class="nav-center">
       <li><a onclick="showPage('about')" data-page="about">About</a></li>
-      <li class="dropdown">
-        <a onclick="showPage('services')" data-page="services" class="dropdown-toggle">Services <span class="chevron">▾</span></a>
-        <div class="dropdown-menu">
-          <a onclick="showPage('svc-modeling')">Modeling & Simulation</a>
-          <a onclick="showPage('svc-failure')">Failure Analysis</a>
-          <a onclick="showPage('svc-testing')">Mechanical Testing</a>
-          <div class="dropdown-divider"></div>
-          <a onclick="showPage('svc-data-analysis')">Data Analysis</a>
-          <a onclick="showPage('svc-data-generation')">Data Generation & Analysis</a>
-          <div class="dropdown-divider"></div>
-          <a onclick="showPage('svc-ai')">AI in Simulation</a>
-          <a onclick="showPage('svc-software')">Software Development</a>
-        </div>
-      </li>
       <li><a onclick="showPage('experience')" data-page="experience">Experience</a></li>
       <li><a onclick="showPage('case-studies')" data-page="case-studies">Case Studies</a></li>
       <li><a onclick="showPage('publications')" data-page="publications">Publications</a></li>
@@ -370,669 +220,257 @@ footer{background:#0c0c0a;padding:22px 0;font-family:var(--mono);font-size:11px;
 </nav>
 
 
-<!-- ══════════════════════════════════════════
-     PAGE: HOME
-══════════════════════════════════════════ -->
+<!-- PAGE: HOME -->
 <div id="page-home" class="page active">
-
-  <!-- HERO -->
   <section class="hero">
     <div class="wrap">
       <div class="hero-grid">
         <div>
           <div class="hero-tag">Simulation & Development Engineer · Bremen, Germany</div>
           <h1>Bridging <em>Simulation</em>,<br>Machine Learning,<br>and Engineering.</h1>
-          <p class="hero-desc">12+ years across industrial R&D, academic research, and product development. Expert in FEM, fatigue & damage-tolerance analysis, lightweight optimisation, and data-driven automated engineering workflows.</p>
+          <p class="hero-desc">12+ years across industrial R&D, academic research, and product development. Expert in FEM, fatigue analysis, and data-driven automated engineering workflows.</p>
           <div class="hero-btns">
             <button class="btn-solid" onclick="showPage('case-studies')">Explore Case Studies</button>
-            <button class="btn-outline cv-btn">Download CV</button>
+            <a href="Lebenslauf_Ali_Cheloee-Darabi.pdf" target="_blank" class="btn-outline">Download CV</a>
           </div>
           <div class="stats-bar">
             <div><div class="stat-n">12+</div><div class="stat-l">Years Experience</div></div>
-            <div><div class="stat-n">+20</div><div class="stat-l">Peer-Reviewed Publications</div></div>
-            <div><div class="stat-n">25%</div><div class="stat-l">Weight Reduction Achieved</div></div>
-            <div><div class="stat-n">40%</div><div class="stat-l">Fatigue Life Improvement</div></div>
+            <div><div class="stat-n">+20</div><div class="stat-l">Publications</div></div>
+            <div><div class="stat-n">25%</div><div class="stat-l">Weight Reduction</div></div>
           </div>
         </div>
         <div class="hero-card">
-          <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?q=80&w=900&auto=format&fit=crop" alt="FEM structural simulation" width="420" height="420" loading="eager">
-          <div class="hero-card-footer"><span>FEM / STRUCTURAL ANALYSIS</span><span>GERMANY</span></div>
+          <!-- اصلاح شد: عکس شما -->
+          <img src="ali.jpg" alt="Ali Cheloee-Darabi" width="420" height="420" loading="eager">
+          <div class="hero-card-footer"><span>FEM / STRUCTURAL</span><span>GERMANY</span></div>
           <div class="hero-chips">
-            <span class="chip">Abaqus</span><span class="chip">ANSYS</span><span class="chip">Python</span><span class="chip">FKM</span>
+            <span class="chip">Abaqus</span><span class="chip">Python</span><span class="chip">FKM</span><span class="chip">ML</span>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- WORKFLOW -->
   <section class="workflow-section">
     <div class="wrap">
       <div class="sec-tag fade-up">Workflow</div>
       <h2 class="sec-title fade-up">From problem to<br>validated solution.</h2>
       <div class="workflow-grid">
-        <div class="wf-item fade-up"><div class="wf-n">01</div><div class="wf-name">Technical Review</div><p class="wf-txt">Geometry, loads, constraints, material data, and applicable standards. NDA available for sensitive industrial projects.</p></div>
-        <div class="wf-item fade-up" style="transition-delay:.07s"><div class="wf-n">02</div><div class="wf-name">Simulation Strategy</div><p class="wf-txt">Software selection, mesh approach, validation method, and applicable standards (FKM, DIN).</p></div>
-        <div class="wf-item fade-up" style="transition-delay:.14s"><div class="wf-n">03</div><div class="wf-name">Analysis & Optimisation</div><p class="wf-txt">FEM execution, parametric studies, automation pipelines, and iterative engineering evaluation until objectives are met.</p></div>
-        <div class="wf-item fade-up" style="transition-delay:.21s"><div class="wf-n">04</div><div class="wf-name">Validation & Reporting</div><p class="wf-txt">Engineering report, result interpretation, design recommendations, and reproducible documentation.</p></div>
+        <div class="wf-item fade-up"><div class="wf-n">01</div><div class="wf-name">Technical Review</div><p class="wf-txt">Geometry, loads, and material data. NDA available for sensitive projects.</p></div>
+        <div class="wf-item fade-up" style="transition-delay:.1s"><div class="wf-n">02</div><div class="wf-name">Simulation</div><p class="wf-txt">Software selection, mesh approach, and standards (FKM, DIN).</p></div>
+        <div class="wf-item fade-up" style="transition-delay:.2s"><div class="wf-n">03</div><div class="wf-name">Optimization</div><p class="wf-txt">Iterative engineering evaluation until objectives are met.</p></div>
+        <div class="wf-item fade-up" style="transition-delay:.3s"><div class="wf-n">04</div><div class="wf-name">Reporting</div><p class="wf-txt">Validated reports and design recommendations.</p></div>
       </div>
     </div>
   </section>
 
-  <!-- SELECTED WORK -->
-  <section style="background:var(--bg);">
-    <div class="wrap">
-      <div class="sec-tag fade-up">Selected Work</div>
-      <h2 class="sec-title fade-up">Engineering case studies<br>with measurable impact.</h2>
+  <div class="contact-strip">
+    <h2>Let's solve something <em>together.</em></h2>
+    <p>Open to senior engineering roles and freelance simulation projects.</p>
+    <button class="btn-solid" onclick="showPage('contact')" style="background:white;color:var(--accent);">Get in Touch</button>
+  </div>
+</div>
 
+
+<!-- PAGE: ABOUT -->
+<div id="page-about" class="page">
+  <section style="padding-top:160px;">
+    <div class="wrap">
+      <div class="sec-tag">About</div>
+      <h1 class="sec-title">The engineer behind the <em>work.</em></h1>
+      <div style="display:grid; grid-template-columns: 1fr 1fr; gap:64px;">
+        <div class="case-p">
+          <p>I'm a simulation and development engineer with over 12 years of experience in structural mechanics, fatigue analysis, and data-driven engineering. My career spans fracture mechanics laboratories in Tehran, research at Universität Stuttgart, and industrial engineering at Springer GmbH in Germany.</p>
+          <p style="margin-top:20px;">I approach every project from design concept through to validated results. My work combines deep technical expertise in FEM (Abaqus, ANSYS) with modern data science tools (Python, ML) to deliver engineering solutions that are both rigorous and efficient.</p>
+          <div style="margin-top:32px; display:flex; gap:12px;">
+            <a href="Lebenslauf_Ali_Cheloee-Darabi.pdf" target="_blank" class="btn-solid">Download CV</a>
+            <button class="btn-outline" onclick="showPage('contact')">Contact Me</button>
+          </div>
+        </div>
+        <div style="background:var(--surface); border:1px solid var(--border); padding:32px;">
+          <h4 style="margin-bottom:20px; font-family:var(--serif);">Technical Core</h4>
+          <div class="techs">
+            <span class="tch">FEM (Abaqus/ANSYS)</span><span class="tch">Python Automation</span>
+            <span class="tch">Fatigue (FKM)</span><span class="tch">Machine Learning</span>
+            <span class="tch">Fracture Mechanics</span><span class="tch">CATIA/SolidWorks</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+
+<!-- PAGE: EXPERIENCE -->
+<div id="page-experience" class="page">
+  <section style="padding-top:160px;">
+    <div class="wrap">
+      <div class="sec-tag">Experience</div>
+      <h1 class="sec-title">Career History</h1>
+      <div class="career-list">
+        <div class="career-row fade-up">
+          <div class="career-period">2023 — Present</div>
+          <div>
+            <div class="career-co">Springer GmbH · Germany</div>
+            <div class="career-role">Calculation Engineer</div>
+            <ul class="career-ul">
+              <li>FEM analyses (static & fatigue) per FKM guidelines.</li>
+              <li>Lightweight redesign: 25% weight reduction achieved.</li>
+              <li>Design optimization: 40% fatigue life improvement.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="career-row fade-up">
+          <div class="career-period">2018 — 2023</div>
+          <div>
+            <div class="career-co">Universität Stuttgart · IMWF</div>
+            <div class="career-role">Research Associate (PhD cand.)</div>
+            <ul class="career-ul">
+              <li>Automated simulation workflows (PFM + FEM) using Python.</li>
+              <li>Trained ANN models for material property prediction.</li>
+              <li>Published 20+ papers in peer-reviewed journals.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div style="margin-top:40px;">
+        <a href="Lebenslauf_Ali_Cheloee-Darabi.pdf" target="_blank" class="btn-outline">Download Full PDF CV</a>
+      </div>
+    </div>
+  </section>
+</div>
+
+
+<!-- PAGE: CASE STUDIES -->
+<div id="page-case-studies" class="page">
+  <section style="padding-top:160px;">
+    <div class="wrap">
+      <div class="sec-tag">Case Studies</div>
+      <h1 class="sec-title">Selected Projects</h1>
+      
       <div class="case-study fade-up">
-        <div class="case-img"><img src="https://images.unsplash.com/photo-1537462715879-360eeb61a0ad?q=80&w=900&auto=format&fit=crop" alt="Industrial gripper FEM" width="600" height="450" loading="lazy"></div>
+        <div class="case-img"><img src="https://images.unsplash.com/photo-1537462715879-360eeb61a0ad?q=80&w=900&auto=format" alt="Robotics"></div>
         <div class="case-body">
-          <div class="case-cat">FEM · Lightweight Design · Springer GmbH</div>
-          <h3 class="case-title">Lightweight Redesign of Industrial Robotic Gripper Systems</h3>
-          <div class="case-lbl">Problem</div>
-          <p class="case-p">Large-scale gripper components were over-engineered — excess mass increased operational loads and manufacturing costs with no structural benefit.</p>
-          <div class="case-lbl">My Role & Process</div>
-          <p class="case-p">Led full redesign cycle: CAD geometry optimisation → FEM stress & fatigue analysis (Abaqus, ANSYS) per FKM guidelines → iterative mass reduction → experimental structural validation.</p>
-          <div class="case-lbl">Results</div>
-          <div class="results"><span class="res">↓ 25% Weight</span><span class="res">↓ 15% Production Cost</span><span class="res">↑ 40% Fatigue Life</span></div>
-          <div class="techs"><span class="tch">Abaqus</span><span class="tch">ANSYS</span><span class="tch">Python</span><span class="tch">FKM</span><span class="tch">CATIA</span></div>
-          <button class="btn-outline" style="font-size:10px;padding:10px 20px;" onclick="showPage('case-studies')">Read full case study →</button>
+          <div class="case-cat">Industrial · Springer GmbH</div>
+          <h3 class="case-title">Lightweight Redesign of Robotic Grippers</h3>
+          <p class="case-p">Redesigning over-engineered gripper components using FKM fatigue analysis to reduce mass while maintaining structural integrity.</p>
+          <div class="results"><span class="res">↓ 25% Weight</span><span class="res">↑ 40% Fatigue Life</span></div>
+          <div class="techs"><span class="tch">Abaqus</span><span class="tch">Python</span><span class="tch">FKM</span></div>
         </div>
       </div>
 
       <div class="case-study rev fade-up">
+        <div class="case-img"><img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=900&auto=format" alt="ML"></div>
         <div class="case-body">
-          <div class="case-cat">ML · FEM · Research — Universität Stuttgart</div>
-          <h3 class="case-title">Data-Driven Material Modelling with Deep Learning & FEM</h3>
-          <div class="case-lbl">Problem</div>
-          <p class="case-p">Characterising mechanical properties through physical experiments was slow, expensive, and limited to discrete parameter combinations.</p>
-          <div class="case-lbl">My Role & Process</div>
-          <p class="case-p">Built fully automated simulation pipeline: PFM + FEM + Python post-processing. Trained ANN & DL models for material property prediction and damage initiation. Applied inverse design to map process parameters to target properties.</p>
-          <div class="case-lbl">Results</div>
-          <div class="results"><span class="res">Automated Workflow</span><span class="res">Reduced Experiments</span><span class="res">3 Publications</span></div>
-          <div class="techs"><span class="tch">Python</span><span class="tch">ANN / DL</span><span class="tch">Abaqus</span><span class="tch">PFM</span><span class="tch">MATLAB</span></div>
-          <button class="btn-outline" style="font-size:10px;padding:10px 20px;" onclick="showPage('case-studies')">Read full case study →</button>
-        </div>
-        <div class="case-img"><img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=900&auto=format&fit=crop" alt="Data-driven machine learning engineering" width="600" height="450" loading="lazy"></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- EXPERTISE -->
-  <section style="background:var(--surface);">
-    <div class="wrap">
-      <div class="sec-tag fade-up">Technical Capabilities</div>
-      <h2 class="sec-title fade-up">What I specialise in.</h2>
-      <div class="exp-grid">
-        <div class="exp-card fade-up"><div class="exp-n">01</div><div class="exp-name">Structural FEM</div><p class="exp-txt">Static, fatigue, and damage-tolerance analysis per FKM & DIN standards.</p><div class="exp-tools"><span class="exp-t">Abaqus · ANSYS</span><span class="exp-t">Nastran · HyperWorks · fe-safe</span></div><button class="exp-query" onclick="showPage('svc-modeling')">Learn more →</button></div>
-        <div class="exp-card fade-up" style="transition-delay:.07s"><div class="exp-n">02</div><div class="exp-name">Engineering Automation</div><p class="exp-txt">Python-based automation of FEM workflows, parametric studies, and post-processing.</p><div class="exp-tools"><span class="exp-t">Python · MATLAB</span><span class="exp-t">PFM + FEM pipelines</span></div><button class="exp-query" onclick="showPage('svc-software')">Learn more →</button></div>
-        <div class="exp-card fade-up" style="transition-delay:.14s"><div class="exp-n">03</div><div class="exp-name">Data-Driven Modelling</div><p class="exp-txt">ANN & deep learning for material prediction, damage initiation, and inverse design.</p><div class="exp-tools"><span class="exp-t">ANN · Deep Learning · DoE</span></div><button class="exp-query" onclick="showPage('svc-ai')">Learn more →</button></div>
-        <div class="exp-card fade-up" style="transition-delay:.21s"><div class="exp-n">04</div><div class="exp-name">Lightweight Design</div><p class="exp-txt">Mass & cost reduction without compromising fatigue life. Full CAD → FEM → test cycle.</p><div class="exp-tools"><span class="exp-t">CATIA V5 · SolidWorks</span><span class="exp-t">Topology optimisation</span></div><button class="exp-query" onclick="showPage('svc-modeling')">Learn more →</button></div>
-        <div class="exp-card fade-up" style="transition-delay:.28s"><div class="exp-n">05</div><div class="exp-name">Failure Analysis</div><p class="exp-txt">Fracture mechanics, crack propagation, remaining life per FKM/DIN.</p><div class="exp-tools"><span class="exp-t">fe-safe · Abaqus · FKM</span></div><button class="exp-query" onclick="showPage('svc-failure')">Learn more →</button></div>
-        <div class="exp-card fade-up" style="transition-delay:.35s"><div class="exp-n">06</div><div class="exp-name">Testing & Validation</div><p class="exp-txt">Test-simulation correlation and microstructural characterisation.</p><div class="exp-tools"><span class="exp-t">SEM · EBSD · DIN-Normen</span></div><button class="exp-query" onclick="showPage('svc-testing')">Learn more →</button></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTACT STRIP -->
-  <div class="contact-strip">
-    <h2>Let's solve something <em>together.</em></h2>
-    <p>Open to senior engineering roles and freelance simulation projects.</p>
-    <button class="btn-solid" onclick="showPage('contact')" style="border-color:white;background:white;color:var(--accent);">Get in Touch</button>
-  </div>
-
-  <footer><div class="footer-inner"><span>Ali Cheloee-Darabi</span><div class="footer-links"><a onclick="showPage('about')">About</a><a onclick="showPage('services')">Services</a><a onclick="showPage('case-studies')">Case Studies</a><a onclick="showPage('contact')">Contact</a></div><span>© 2026</span></div></footer>
-</div>
-
-
-<!-- ══════════════════════════════════════════
-     PAGE: ABOUT
-══════════════════════════════════════════ -->
-<div id="page-about" class="page">
-  <div class="page-hero">
-    <div class="wrap">
-      <div class="page-hero-tag">About</div>
-      <h1>The engineer<br>behind the <em>work.</em></h1>
-      <p class="page-hero-desc">Simulation & Development Engineer with 12+ years across industrial R&D, academic research, and product development. Based in Bremen, Germany.</p>
-    </div>
-  </div>
-  <section style="background:var(--surface);">
-    <div class="wrap">
-      <div class="about-grid">
-        <div class="about-txt fade-up">
-          <p>I'm a simulation and development engineer with over 12 years of experience in structural mechanics, fatigue analysis, and data-driven engineering. My career spans fracture mechanics laboratories in Tehran, research at Universität Stuttgart, and industrial engineering at Springer GmbH in Germany.</p>
-          <p>What drives me is the intersection of rigorous simulation and real engineering impact — whether that's cutting component weight by 25%, extending fatigue life by 40%, or building machine learning pipelines that significantly reduce physical testing requirements.</p>
-          <p>I approach every project from design concept through to validated results. My work combines deep technical expertise in FEM (Abaqus, ANSYS, Nastran) with modern data science tools (Python, ANN, deep learning) to deliver engineering solutions that are both rigorous and efficient.</p>
-          <p>Currently open to senior engineering roles in structural simulation, R&D, or product development — as well as selected freelance simulation and modelling projects.</p>
-          <div style="margin-top:28px;display:flex;gap:14px;flex-wrap:wrap;">
-            <button class="btn-solid" onclick="showPage('case-studies')">View Case Studies</button>
-            <button class="btn-outline cv-btn">Download CV</button>
-          </div>
-        </div>
-        <div class="fade-up" style="transition-delay:.1s">
-          <div class="about-specs">
-            <div class="about-spec"><span class="about-spec-l">Current Role</span><span class="about-spec-v">Calculation Engineer · Springer GmbH</span></div>
-            <div class="about-spec"><span class="about-spec-l">Location</span><span class="about-spec-v">Bremen, Germany</span></div>
-            <div class="about-spec"><span class="about-spec-l">Education</span><span class="about-spec-v">PhD cand. · M.Sc. · B.Sc. Mechanical Engineering</span></div>
-            <div class="about-spec"><span class="about-spec-l">PhD Focus</span><span class="about-spec-v">Data-Driven Material Modeling · FEM · ML</span></div>
-            <div class="about-spec"><span class="about-spec-l">Core Tools</span><span class="about-spec-v">Abaqus · ANSYS · Python · CATIA</span></div>
-            <div class="about-spec"><span class="about-spec-l">Standards</span><span class="about-spec-v">FKM-Richtlinie · DIN-Normen</span></div>
-            <div class="about-spec"><span class="about-spec-l">Languages</span><span class="about-spec-v">Persian (native) · English C1 · German B2</span></div>
-            <div class="about-spec"><span class="about-spec-l">Publications</span><span class="about-spec-v">+20 peer-reviewed journals</span></div>
-            <div class="about-spec"><span class="about-spec-l">Availability</span><span class="about-spec-v">Open to offers · Freelance available</span></div>
-          </div>
+          <div class="case-cat">R&D · Uni Stuttgart</div>
+          <h3 class="case-title">Data-Driven Material Modeling</h3>
+          <p class="case-p">Building an automated pipeline to generate FEM datasets and train Deep Learning models for property prediction.</p>
+          <div class="results"><span class="res">Automated Workflow</span><span class="res">ML Prediction</span></div>
+          <div class="techs"><span class="tch">Python</span><span class="tch">ANN</span><span class="tch">Abaqus</span></div>
         </div>
       </div>
     </div>
   </section>
-  <div class="contact-strip"><h2>Interested in working <em>together?</em></h2><p>Let's have a technical discussion — no commitment required.</p><button class="btn-solid" onclick="showPage('contact')" style="border-color:white;background:white;color:var(--accent);">Get in Touch</button></div>
-  <footer><div class="footer-inner"><span>Ali Cheloee-Darabi</span><div class="footer-links"><a onclick="showPage('home')">Home</a><a onclick="showPage('services')">Services</a><a onclick="showPage('contact')">Contact</a></div><span>© 2026</span></div></footer>
 </div>
 
 
-<!-- ══════════════════════════════════════════
-     PAGE: SERVICES OVERVIEW
-══════════════════════════════════════════ -->
-<div id="page-services" class="page">
-  <div class="page-hero">
-    <div class="wrap">
-      <div class="page-hero-tag">Services</div>
-      <h1>What I can do<br>for <em>you.</em></h1>
-      <p class="page-hero-desc">From structural simulation and failure analysis to AI-driven modelling and software automation — end-to-end engineering solutions.</p>
-    </div>
-  </div>
-  <section style="background:var(--surface);">
-    <div class="wrap">
-      <div class="services-grid">
-        <div class="svc-card fade-up" onclick="showPage('svc-modeling')">
-          <div class="svc-n">01</div>
-          <div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></div>
-          <div class="svc-name">Modeling & Simulation</div>
-          <p class="svc-txt">FEM simulation, structural analysis, topology optimisation and engineering validation per FKM & DIN standards.</p>
-          <span class="svc-link">Explore service →</span>
-        </div>
-        <div class="svc-card fade-up" style="transition-delay:.07s" onclick="showPage('svc-failure')">
-          <div class="svc-n">02</div>
-          <div class="svc-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 8v4l3 3"/></svg></div>
-          <div class="svc-name">Failure Analysis</div>
-          <p class="svc-txt">Fatigue assessment, crack analysis, fracture mechanics and damage tolerance for safety-critical components.</p>
-          <span class="svc-link">Explore service →</span>
-        </div>
-        <div class="svc-card fade-up" style="transition-delay:.14s" onclick="showPage('svc-testing')">
-          <div class="svc-n">03</div>
-          <div class="svc-icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg></div>
-          <div class="svc-name">Mechanical Testing</div>
-          <p class="svc-txt">Experimental validation, material testing, SEM/EBSD microanalysis and test-simulation correlation.</p>
-          <span class="svc-link">Explore service →</span>
-        </div>
-        <div class="svc-card fade-up" style="transition-delay:.21s" onclick="showPage('svc-data-analysis')">
-          <div class="svc-n">04</div>
-          <div class="svc-icon"><svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
-          <div class="svc-name">Data Analysis</div>
-          <p class="svc-txt">Processing engineering datasets, statistical analysis, parametric studies and structured reporting.</p>
-          <span class="svc-link">Explore service →</span>
-        </div>
-        <div class="svc-card fade-up" style="transition-delay:.28s" onclick="showPage('svc-data-generation')">
-          <div class="svc-n">05</div>
-          <div class="svc-icon"><svg viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg></div>
-          <div class="svc-name">Data Generation & Analysis</div>
-          <p class="svc-txt">Automated simulation-based data generation for training ML models and Design of Experiments (DoE).</p>
-          <span class="svc-link">Explore service →</span>
-        </div>
-        <div class="svc-card fade-up" style="transition-delay:.35s" onclick="showPage('svc-ai')">
-          <div class="svc-n">06</div>
-          <div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20z"/><path d="M12 8v4l3 3"/></svg></div>
-          <div class="svc-name">AI in Simulation</div>
-          <p class="svc-txt">Deep learning and ANN models integrated into FEM workflows for property prediction and inverse design.</p>
-          <span class="svc-link">Explore service →</span>
-        </div>
-        <div class="svc-card fade-up" style="transition-delay:.42s" onclick="showPage('svc-software')">
-          <div class="svc-n">07</div>
-          <div class="svc-icon"><svg viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div>
-          <div class="svc-name">Software Development</div>
-          <p class="svc-txt">Python automation, simulation pipelines, post-processing tools and engineering dashboards.</p>
-          <span class="svc-link">Explore service →</span>
-        </div>
-      </div>
-    </div>
-  </section>
-  <div class="contact-strip"><h2>Ready to start a <em>project?</em></h2><p>Let's discuss scope, timeline, and approach.</p><button class="btn-solid" onclick="showPage('contact')" style="border-color:white;background:white;color:var(--accent);">Get in Touch</button></div>
-  <footer><div class="footer-inner"><span>Ali Cheloee-Darabi</span><div class="footer-links"><a onclick="showPage('home')">Home</a><a onclick="showPage('case-studies')">Case Studies</a><a onclick="showPage('contact')">Contact</a></div><span>© 2026</span></div></footer>
-</div>
-
-
-<!-- ══ SERVICE DETAIL PAGES (one template each) ══ -->
-
-<!-- Modeling & Simulation -->
-<div id="page-svc-modeling" class="page">
-  <div class="page-hero"><div class="wrap"><div class="page-hero-tag">Services · 01</div><h1>Modeling &<br><em>Simulation</em></h1><p class="page-hero-desc">FEM-based structural analysis, topology optimisation and engineering validation for industrial and safety-critical components.</p></div></div>
-  <section style="background:var(--surface);"><div class="wrap"><div class="service-detail-grid fade-up">
-    <div>
-      <div class="sec-tag">What's included</div>
-      <h2 class="sec-title" style="margin-bottom:24px;">Structural FEM analysis<br>from concept to report.</h2>
-      <ul class="sd-list">
-        <li>Static and quasi-static structural analysis</li>
-        <li>Fatigue and cyclic loading simulation</li>
-        <li>Thermal and thermo-mechanical analysis</li>
-        <li>Topology and parametric optimisation</li>
-        <li>Lightweight design — mass & cost reduction</li>
-        <li>Full development cycle: CAD → FEM → prototyping → testing</li>
-        <li>Technical report with design recommendations</li>
-        <li>NDA available for confidential industrial projects</li>
-      </ul>
-      <div style="margin-top:32px;display:flex;gap:14px;flex-wrap:wrap;">
-        <button class="btn-solid" onclick="openChat('I need Modeling & Simulation services')">Request a Quote</button>
-        <button class="btn-outline" onclick="showPage('case-studies')">View Case Studies</button>
-      </div>
-    </div>
-    <div class="sd-sidebar">
-      <h4>Tools & Software</h4>
-      <div class="sd-tools">
-        <div class="sd-tool">Abaqus</div><div class="sd-tool">ANSYS Mechanical</div>
-        <div class="sd-tool">Nastran / Patran</div><div class="sd-tool">HyperWorks</div>
-        <div class="sd-tool">LS-DYNA</div><div class="sd-tool">CATIA V5</div><div class="sd-tool">SolidWorks</div>
-      </div>
-      <div style="margin-top:24px;padding-top:20px;border-top:1px solid var(--border);">
-        <div class="sec-tag" style="margin-bottom:10px;">Standards</div>
-        <div class="sd-tools"><div class="sd-tool">FKM-Richtlinie</div><div class="sd-tool">DIN-Normen</div></div>
-      </div>
-    </div>
-  </div></div></section>
-  <div class="contact-strip"><h2>Need a simulation <em>quote?</em></h2><p>Describe your project and I'll respond within 24 hours.</p><button class="btn-solid" onclick="showPage('contact')" style="border-color:white;background:white;color:var(--accent);">Get in Touch</button></div>
-  <footer><div class="footer-inner"><span>Ali Cheloee-Darabi</span><div class="footer-links"><a onclick="showPage('services')">All Services</a><a onclick="showPage('contact')">Contact</a></div><span>© 2026</span></div></footer>
-</div>
-
-<!-- Failure Analysis -->
-<div id="page-svc-failure" class="page">
-  <div class="page-hero"><div class="wrap"><div class="page-hero-tag">Services · 02</div><h1>Failure<br><em>Analysis</em></h1><p class="page-hero-desc">Fatigue assessment, fracture mechanics, and damage-tolerance analysis for safety-critical components per FKM and DIN standards.</p></div></div>
-  <section style="background:var(--surface);"><div class="wrap"><div class="service-detail-grid fade-up">
-    <div>
-      <div class="sec-tag">What's included</div>
-      <h2 class="sec-title" style="margin-bottom:24px;">From crack initiation<br>to life assessment.</h2>
-      <ul class="sd-list">
-        <li>Fatigue life calculation per FKM-Richtlinie</li>
-        <li>Damage-tolerance and crack propagation analysis</li>
-        <li>Identification of critical failure zones in FEM</li>
-        <li>Fracture mechanics modelling (LEFM / EPFM)</li>
-        <li>Remaining service life estimation</li>
-        <li>Test-simulation correlation and experimental validation</li>
-        <li>Failure root-cause investigation</li>
-        <li>Engineering report with recommendations</li>
-      </ul>
-      <div style="margin-top:32px;display:flex;gap:14px;flex-wrap:wrap;">
-        <button class="btn-solid" onclick="openChat('I need Failure Analysis services')">Request a Quote</button>
-        <button class="btn-outline" onclick="showPage('case-studies')">View Case Studies</button>
-      </div>
-    </div>
-    <div class="sd-sidebar">
-      <h4>Tools & Software</h4>
-      <div class="sd-tools"><div class="sd-tool">Abaqus</div><div class="sd-tool">ANSYS</div><div class="sd-tool">fe-safe</div><div class="sd-tool">HyperWorks</div></div>
-      <div style="margin-top:24px;padding-top:20px;border-top:1px solid var(--border);"><div class="sec-tag" style="margin-bottom:10px;">Standards</div><div class="sd-tools"><div class="sd-tool">FKM-Richtlinie</div><div class="sd-tool">DIN-Normen</div></div></div>
-    </div>
-  </div></div></section>
-  <div class="contact-strip"><h2>Have a failure <em>to investigate?</em></h2><p>Get in touch with your component details and I'll respond promptly.</p><button class="btn-solid" onclick="showPage('contact')" style="border-color:white;background:white;color:var(--accent);">Get in Touch</button></div>
-  <footer><div class="footer-inner"><span>Ali Cheloee-Darabi</span><div class="footer-links"><a onclick="showPage('services')">All Services</a><a onclick="showPage('contact')">Contact</a></div><span>© 2026</span></div></footer>
-</div>
-
-<!-- Mechanical Testing -->
-<div id="page-svc-testing" class="page">
-  <div class="page-hero"><div class="wrap"><div class="page-hero-tag">Services · 03</div><h1>Mechanical<br><em>Testing</em></h1><p class="page-hero-desc">Experimental validation, material characterisation, and test-simulation correlation to verify that computed results match physical behaviour.</p></div></div>
-  <section style="background:var(--surface);"><div class="wrap"><div class="service-detail-grid fade-up">
-    <div>
-      <div class="sec-tag">What's included</div>
-      <h2 class="sec-title" style="margin-bottom:24px;">Bridging simulation<br>and physical reality.</h2>
-      <ul class="sd-list">
-        <li>Mechanical material testing (tensile, fatigue, fracture)</li>
-        <li>Microstructural characterisation via SEM and EBSD</li>
-        <li>Test-simulation correlation and model validation</li>
-        <li>Material card generation for FEM models</li>
-        <li>Experimental structural testing support</li>
-        <li>Material data interpretation and reporting</li>
-      </ul>
-      <div style="margin-top:32px;"><button class="btn-solid" onclick="openChat('I need Mechanical Testing services')">Request a Quote</button></div>
-    </div>
-    <div class="sd-sidebar">
-      <h4>Techniques</h4>
-      <div class="sd-tools"><div class="sd-tool">SEM Analysis</div><div class="sd-tool">EBSD Mapping</div><div class="sd-tool">Fatigue Testing</div><div class="sd-tool">Tensile Testing</div><div class="sd-tool">Fracture Mechanics</div></div>
-    </div>
-  </div></div></section>
-  <div class="contact-strip"><h2>Need experimental <em>validation?</em></h2><p>Let's discuss your testing requirements.</p><button class="btn-solid" onclick="showPage('contact')" style="border-color:white;background:white;color:var(--accent);">Get in Touch</button></div>
-  <footer><div class="footer-inner"><span>Ali Cheloee-Darabi</span><div class="footer-links"><a onclick="showPage('services')">All Services</a><a onclick="showPage('contact')">Contact</a></div><span>© 2026</span></div></footer>
-</div>
-
-<!-- Data Analysis -->
-<div id="page-svc-data-analysis" class="page">
-  <div class="page-hero"><div class="wrap"><div class="page-hero-tag">Services · 04</div><h1>Data<br><em>Analysis</em></h1><p class="page-hero-desc">Processing engineering datasets, statistical analysis, parametric studies, optimisation, and structured reporting for engineering decisions.</p></div></div>
-  <section style="background:var(--surface);"><div class="wrap"><div class="service-detail-grid fade-up">
-    <div>
-      <div class="sec-tag">What's included</div>
-      <h2 class="sec-title" style="margin-bottom:24px;">Turning raw data into<br>engineering insight.</h2>
-      <ul class="sd-list">
-        <li>Processing and cleaning engineering datasets</li>
-        <li>Statistical analysis and uncertainty quantification</li>
-        <li>Parametric sensitivity and optimisation studies</li>
-        <li>FEM result post-processing and visualisation</li>
-        <li>Correlation analysis and trend identification</li>
-        <li>Structured engineering reports and dashboards</li>
-      </ul>
-      <div style="margin-top:32px;"><button class="btn-solid" onclick="openChat('I need Data Analysis services')">Request a Quote</button></div>
-    </div>
-    <div class="sd-sidebar"><h4>Tools</h4><div class="sd-tools"><div class="sd-tool">Python (pandas, numpy, scipy)</div><div class="sd-tool">MATLAB</div><div class="sd-tool">Design of Experiments</div><div class="sd-tool">Matplotlib / Plotly</div></div></div>
-  </div></div></section>
-  <div class="contact-strip"><h2>Have data that needs <em>analysis?</em></h2><p>Get in touch with your dataset and objectives.</p><button class="btn-solid" onclick="showPage('contact')" style="border-color:white;background:white;color:var(--accent);">Get in Touch</button></div>
-  <footer><div class="footer-inner"><span>Ali Cheloee-Darabi</span><div class="footer-links"><a onclick="showPage('services')">All Services</a><a onclick="showPage('contact')">Contact</a></div><span>© 2026</span></div></footer>
-</div>
-
-<!-- Data Generation -->
-<div id="page-svc-data-generation" class="page">
-  <div class="page-hero"><div class="wrap"><div class="page-hero-tag">Services · 05</div><h1>Data Generation<br>& <em>Analysis</em></h1><p class="page-hero-desc">Automated simulation-based data generation for ML model training, Design of Experiments, and inverse engineering workflows.</p></div></div>
-  <section style="background:var(--surface);"><div class="wrap"><div class="service-detail-grid fade-up">
-    <div>
-      <div class="sec-tag">What's included</div>
-      <h2 class="sec-title" style="margin-bottom:24px;">Simulation as a<br>data source.</h2>
-      <ul class="sd-list">
-        <li>Automated parametric FEM studies for dataset generation</li>
-        <li>Design of Experiments (DoE) planning and execution</li>
-        <li>Phase-field modelling (PFM) for microstructure data</li>
-        <li>Training dataset preparation for ML models</li>
-        <li>Validation and quality checking of generated datasets</li>
-        <li>Integration with downstream ML pipelines</li>
-      </ul>
-      <div style="margin-top:32px;"><button class="btn-solid" onclick="openChat('I need Data Generation services')">Request a Quote</button></div>
-    </div>
-    <div class="sd-sidebar"><h4>Tools</h4><div class="sd-tools"><div class="sd-tool">Python</div><div class="sd-tool">Abaqus (scripted)</div><div class="sd-tool">PFM pipelines</div><div class="sd-tool">DoE frameworks</div></div></div>
-  </div></div></section>
-  <div class="contact-strip"><h2>Need simulation <em>data?</em></h2><p>Tell me your ML or research requirements.</p><button class="btn-solid" onclick="showPage('contact')" style="border-color:white;background:white;color:var(--accent);">Get in Touch</button></div>
-  <footer><div class="footer-inner"><span>Ali Cheloee-Darabi</span><div class="footer-links"><a onclick="showPage('services')">All Services</a><a onclick="showPage('contact')">Contact</a></div><span>© 2026</span></div></footer>
-</div>
-
-<!-- AI in Simulation -->
-<div id="page-svc-ai" class="page">
-  <div class="page-hero"><div class="wrap"><div class="page-hero-tag">Services · 06</div><h1>AI in<br><em>Simulation</em></h1><p class="page-hero-desc">Integrating deep learning and ANN models into FEM workflows — predicting material properties, damage initiation, and enabling inverse design.</p></div></div>
-  <section style="background:var(--surface);"><div class="wrap"><div class="service-detail-grid fade-up">
-    <div>
-      <div class="sec-tag">What's included</div>
-      <h2 class="sec-title" style="margin-bottom:24px;">Machine learning that<br>speaks engineering.</h2>
-      <ul class="sd-list">
-        <li>ANN model training for mechanical property prediction</li>
-        <li>Deep learning for damage initiation and failure prediction</li>
-        <li>Surrogate models to replace expensive FEM simulations</li>
-        <li>Inverse design: process parameters → target properties</li>
-        <li>AI-driven optimisation of design space (lattice, topology)</li>
-        <li>Integration into automated engineering workflows</li>
-        <li>Model validation and error quantification</li>
-      </ul>
-      <div style="margin-top:32px;"><button class="btn-solid" onclick="openChat('I need AI in Simulation services')">Request a Quote</button></div>
-    </div>
-    <div class="sd-sidebar"><h4>Tools & Frameworks</h4><div class="sd-tools"><div class="sd-tool">Python (TensorFlow / PyTorch)</div><div class="sd-tool">ANN · Deep Learning</div><div class="sd-tool">Scikit-learn</div><div class="sd-tool">MATLAB ML Toolbox</div><div class="sd-tool">Abaqus (scripted)</div></div></div>
-  </div></div></section>
-  <div class="contact-strip"><h2>Want AI in your <em>engineering workflow?</em></h2><p>Let's talk about your use case.</p><button class="btn-solid" onclick="showPage('contact')" style="border-color:white;background:white;color:var(--accent);">Get in Touch</button></div>
-  <footer><div class="footer-inner"><span>Ali Cheloee-Darabi</span><div class="footer-links"><a onclick="showPage('services')">All Services</a><a onclick="showPage('contact')">Contact</a></div><span>© 2026</span></div></footer>
-</div>
-
-<!-- Software Development -->
-<div id="page-svc-software" class="page">
-  <div class="page-hero"><div class="wrap"><div class="page-hero-tag">Services · 07</div><h1>Software<br><em>Development</em></h1><p class="page-hero-desc">Python automation tools, FEM simulation pipelines, post-processing scripts, and engineering calculation dashboards.</p></div></div>
-  <section style="background:var(--surface);"><div class="wrap"><div class="service-detail-grid fade-up">
-    <div>
-      <div class="sec-tag">What's included</div>
-      <h2 class="sec-title" style="margin-bottom:24px;">Engineering software<br>built by engineers.</h2>
-      <ul class="sd-list">
-        <li>Python scripts for FEM workflow automation (Abaqus, ANSYS)</li>
-        <li>Parametric study runners with automated result extraction</li>
-        <li>Post-processing pipelines for FEM result analysis</li>
-        <li>Automated report generation from simulation outputs</li>
-        <li>Engineering calculation tools and dashboards</li>
-        <li>PFM + FEM integrated simulation pipelines</li>
-        <li>Data processing and visualisation tools</li>
-      </ul>
-      <div style="margin-top:32px;"><button class="btn-solid" onclick="openChat('I need Software Development services')">Request a Quote</button></div>
-    </div>
-    <div class="sd-sidebar"><h4>Languages & Tools</h4><div class="sd-tools"><div class="sd-tool">Python</div><div class="sd-tool">MATLAB</div><div class="sd-tool">Abaqus Python API</div><div class="sd-tool">ANSYS scripting</div><div class="sd-tool">pandas · numpy · matplotlib</div></div></div>
-  </div></div></section>
-  <div class="contact-strip"><h2>Need an automation <em>tool?</em></h2><p>Describe your workflow and I'll build the right solution.</p><button class="btn-solid" onclick="showPage('contact')" style="border-color:white;background:white;color:var(--accent);">Get in Touch</button></div>
-  <footer><div class="footer-inner"><span>Ali Cheloee-Darabi</span><div class="footer-links"><a onclick="showPage('services')">All Services</a><a onclick="showPage('contact')">Contact</a></div><span>© 2026</span></div></footer>
-</div>
-
-
-<!-- ══════════════════════════════════════════
-     PAGE: EXPERIENCE
-══════════════════════════════════════════ -->
-<div id="page-experience" class="page">
-  <div class="page-hero"><div class="wrap"><div class="page-hero-tag">Experience</div><h1>12+ years of<br><em>engineering</em> work.</h1><p class="page-hero-desc">Industrial engineering, academic research, and simulation development across Iran and Germany.</p></div></div>
-  <section style="background:var(--surface);"><div class="wrap">
-    <div class="career-list">
-      <div class="career-row fade-up">
-        <div class="career-period">05/2023 — Present</div>
-        <div><div class="career-co">Springer GmbH · Bremen, Germany</div><div class="career-role">Calculation Engineer</div><ul class="career-ul"><li>FEM analyses (static & fatigue) per FKM guidelines — identification of critical failure zones and reduction of failure risk</li><li>Lightweight redesign of large-scale gripper components — 25% weight reduction while meeting all fatigue life requirements</li><li>Design optimisation: up to 40% fatigue life improvement and 15% production cost reduction</li><li>Technical coordination with departments, suppliers, and clients — shortened iteration cycles</li><li>Test-simulation correlation to validate computed structural behaviour experimentally</li></ul></div>
-      </div>
-      <div class="career-row fade-up">
-        <div class="career-period">12/2018 — 04/2023</div>
-        <div><div class="career-co">Universität Stuttgart · IMWF</div><div class="career-role">Research Associate (PhD)</div><ul class="career-ul"><li>Developed fully automated simulation workflow (PFM + FEM + post-processing) with Python</li><li>Trained ANN and deep learning models for mechanical property prediction and damage initiation</li><li>Inverse design approaches linking process parameters to target material properties</li><li>+20 peer-reviewed publications in Q1/Q2 journals; collaboration with funded research partners</li></ul></div>
-      </div>
-      <div class="career-row fade-up">
-        <div class="career-period">10/2015 — 10/2018</div>
-        <div><div class="career-co">Behzad Diesel · Tehran, Iran</div><div class="career-role">Development Engineer</div><ul class="career-ul"><li>CAD & FEM-based component development with material and process optimisation</li><li>Damage-tolerance calculations and fatigue life assessments for safety-critical components</li><li>Cross-team coordination (design, manufacturing, assembly) — reduced development time ~20%</li><li>Quality analysis and defect reduction in production processes</li></ul></div>
-      </div>
-      <div class="career-row fade-up">
-        <div class="career-period">04/2014 — 09/2015</div>
-        <div><div class="career-co">IUST · Lab for Fracture Mechanics & Fatigue, Tehran</div><div class="career-role">Simulation & Test Engineer</div><ul class="career-ul"><li>FEM simulations for damage-tolerance analysis and experimental material testing</li><li>Test-simulation correlation to validate computational results</li></ul></div>
-      </div>
-    </div>
-    <div style="margin-top:36px;"><button class="btn-outline cv-btn">Download Full CV (PDF)</button></div>
-  </div></section>
-  <div class="contact-strip"><h2>Interested in my <em>background?</em></h2><p>Let's discuss how my experience fits your project or role.</p><button class="btn-solid" onclick="showPage('contact')" style="border-color:white;background:white;color:var(--accent);">Get in Touch</button></div>
-  <footer><div class="footer-inner"><span>Ali Cheloee-Darabi</span><div class="footer-links"><a onclick="showPage('home')">Home</a><a onclick="showPage('publications')">Publications</a><a onclick="showPage('contact')">Contact</a></div><span>© 2026</span></div></footer>
-</div>
-
-
-<!-- ══════════════════════════════════════════
-     PAGE: CASE STUDIES
-══════════════════════════════════════════ -->
-<div id="page-case-studies" class="page">
-  <div class="page-hero"><div class="wrap"><div class="page-hero-tag">Case Studies</div><h1>Engineering problems,<br><em>solved.</em></h1><p class="page-hero-desc">Real projects with measurable outcomes — from industrial lightweight design to AI-driven material modelling.</p></div></div>
-  <section style="background:var(--bg);"><div class="wrap">
-
-    <div class="case-study fade-up">
-      <div class="case-img"><img src="https://images.unsplash.com/photo-1537462715879-360eeb61a0ad?q=80&w=900&auto=format&fit=crop" alt="Industrial gripper FEM" width="600" height="450" loading="lazy"></div>
-      <div class="case-body">
-        <div class="case-cat">FEM · Lightweight Design · Springer GmbH</div>
-        <h3 class="case-title">Lightweight Redesign of Industrial Robotic Gripper Systems</h3>
-        <div class="case-lbl">Problem</div><p class="case-p">Large-scale gripper components were over-engineered — excess mass increased operational loads and manufacturing costs with no structural benefit.</p>
-        <div class="case-lbl">My Role & Process</div><p class="case-p">Led the full redesign cycle: CAD geometry optimisation → FEM stress & fatigue analysis (Abaqus, ANSYS) per FKM guidelines → iterative mass reduction → experimental structural validation. Managed technical coordination across engineering, production, and supplier teams.</p>
-        <div class="case-lbl">Results</div>
-        <div class="results"><span class="res">↓ 25% Weight</span><span class="res">↓ 15% Production Cost</span><span class="res">↑ 40% Fatigue Life</span><span class="res">All Requirements Met</span></div>
-        <div class="techs"><span class="tch">Abaqus</span><span class="tch">ANSYS</span><span class="tch">Python</span><span class="tch">FKM</span><span class="tch">CATIA</span></div>
-      </div>
-    </div>
-
-    <div class="case-study rev fade-up">
-      <div class="case-body">
-        <div class="case-cat">ML · FEM · Research — Universität Stuttgart</div>
-        <h3 class="case-title">Data-Driven Material Modelling with Deep Learning & FEM</h3>
-        <div class="case-lbl">Problem</div><p class="case-p">Characterising mechanical properties through physical experiments was slow, expensive, and limited to discrete parameter combinations.</p>
-        <div class="case-lbl">My Role & Process</div><p class="case-p">Built fully automated simulation pipeline: phase-field modelling (PFM) + FEM + Python post-processing. Trained ANN & deep learning models for material property prediction and damage initiation. Applied inverse design methods to map process parameters to target material properties — significantly reducing experimental effort.</p>
-        <div class="case-lbl">Results</div>
-        <div class="results"><span class="res">Automated Workflow</span><span class="res">Reduced Experiments</span><span class="res">3 Publications</span><span class="res">Inverse Design</span></div>
-        <div class="techs"><span class="tch">Python</span><span class="tch">ANN / DL</span><span class="tch">Abaqus</span><span class="tch">PFM</span><span class="tch">MATLAB</span></div>
-      </div>
-      <div class="case-img"><img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=900&auto=format&fit=crop" alt="Data-driven machine learning" width="600" height="450" loading="lazy"></div>
-    </div>
-
-    <div class="case-study fade-up">
-      <div class="case-img"><img src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?q=80&w=900&auto=format&fit=crop" alt="Lattice structure AI optimisation" width="600" height="450" loading="lazy"></div>
-      <div class="case-body">
-        <div class="case-cat">AI · Optimisation — InnovationsCampus BW</div>
-        <h3 class="case-title">AI-Driven Optimisation of Lattice Structures for Crash Applications</h3>
-        <div class="case-lbl">Problem</div><p class="case-p">Trial-and-error design of lightweight crash structures was too slow and failed to explore the parametric lattice design space effectively.</p>
-        <div class="case-lbl">My Role & Process</div><p class="case-p">Cooperation project with InnovationsCampus Baden-Württemberg. Generated parametric lattice geometries, ran Abaqus FEM crash simulations, and built an ML pipeline to predict and optimise energy absorption across the full design space.</p>
-        <div class="case-lbl">Results</div>
-        <div class="results"><span class="res">Improved Energy Absorption</span><span class="res">Automated Design Space</span><span class="res">ML-Guided Optimisation</span></div>
-        <div class="techs"><span class="tch">Abaqus</span><span class="tch">Python / ML</span><span class="tch">Lattice Design</span><span class="tch">LS-DYNA</span></div>
-      </div>
-    </div>
-
-  </div></section>
-  <div class="contact-strip"><h2>Have a similar <em>challenge?</em></h2><p>Let's discuss how I can help solve it.</p><button class="btn-solid" onclick="showPage('contact')" style="border-color:white;background:white;color:var(--accent);">Get in Touch</button></div>
-  <footer><div class="footer-inner"><span>Ali Cheloee-Darabi</span><div class="footer-links"><a onclick="showPage('home')">Home</a><a onclick="showPage('services')">Services</a><a onclick="showPage('contact')">Contact</a></div><span>© 2026</span></div></footer>
-</div>
-
-
-<!-- ══════════════════════════════════════════
-     PAGE: PUBLICATIONS
-══════════════════════════════════════════ -->
+<!-- PAGE: PUBLICATIONS -->
 <div id="page-publications" class="page">
-  <div class="page-hero"><div class="wrap"><div class="page-hero-tag">Publications</div><h1>Peer-reviewed<br><em>research.</em></h1><p class="page-hero-desc">Published research in FEM, material modelling, damage analysis, and AI-driven engineering systems.</p></div></div>
-  <section style="background:var(--surface);"><div class="wrap">
-    <div class="pub-list">
-      <div class="pub-row fade-up">
-        <div class="pub-yr">2023</div>
-        <div><div class="pub-jnl">Materials · MDPI</div><div class="pub-ttl">Hybrid Data-Driven Deep Learning Framework for Material Mechanical Properties Prediction</div><a href="https://doi.org/10.3390/ma16010447" class="pub-doi" target="_blank" rel="noopener">DOI: 10.3390/ma16010447 →</a></div>
-        <div class="pub-badge">Q1</div>
+  <section style="padding-top:160px;">
+    <div class="wrap">
+      <div class="sec-tag">Research</div>
+      <h1 class="sec-title">Publications</h1>
+      <div class="pub-list">
+        <div class="pub-row fade-up">
+          <div class="pub-yr">2023</div>
+          <div>
+            <div class="pub-jnl">Materials · MDPI</div>
+            <div class="pub-ttl">Hybrid Data-Driven Deep Learning Framework for Material Properties</div>
+            <a href="https://doi.org/10.3390/ma16010447" class="pub-doi" target="_blank">View DOI →</a>
+          </div>
+          <div class="pub-badge">Q1</div>
+        </div>
+        <div class="pub-row fade-up">
+          <div class="pub-yr">2021</div>
+          <div>
+            <div class="pub-jnl">Engineering Fracture Mechanics · Elsevier</div>
+            <div class="pub-ttl">Micromechanical Modeling of Damage Mechanisms</div>
+            <a href="https://doi.org/10.1016/j.engfracmech.2020.107520" class="pub-doi" target="_blank">View DOI →</a>
+          </div>
+          <div class="pub-badge">Q1</div>
+        </div>
       </div>
-      <div class="pub-row fade-up">
-        <div class="pub-yr">2021</div>
-        <div><div class="pub-jnl">Engineering Fracture Mechanics · Elsevier</div><div class="pub-ttl">Micromechanical Modeling of Damage Mechanisms in Dual-Phase Steel</div><a href="https://doi.org/10.1016/j.engfracmech.2020.107520" class="pub-doi" target="_blank" rel="noopener">DOI: 10.1016/j.engfracmech.2020.107520 →</a></div>
-        <div class="pub-badge">Q1</div>
-      </div>
-      <div class="pub-row fade-up">
-        <div class="pub-yr">2020</div>
-        <div><div class="pub-jnl">Metals and Materials International · Springer</div><div class="pub-ttl">Material Characterization and Damage Analysis</div><a href="https://doi.org/10.1007/s12540-020-00681-1" class="pub-doi" target="_blank" rel="noopener">DOI: 10.1007/s12540-020-00681-1 →</a></div>
-        <div class="pub-badge">Q2</div>
+      <div style="margin-top:32px;">
+        <a href="https://scholar.google.com/citations?user=HwTuUgIAAAAJ" target="_blank" class="btn-outline">Google Scholar Profile</a>
       </div>
     </div>
-    <div style="margin-top:32px;"><a href="https://scholar.google.com/citations?user=HwTuUgIAAAAJ" target="_blank" rel="noopener" class="btn-outline">View all on Google Scholar →</a></div>
-  </div></section>
-  <div class="contact-strip"><h2>Interested in <em>research collaboration?</em></h2><p>I'm open to joint research and academic projects.</p><button class="btn-solid" onclick="showPage('contact')" style="border-color:white;background:white;color:var(--accent);">Get in Touch</button></div>
-  <footer><div class="footer-inner"><span>Ali Cheloee-Darabi</span><div class="footer-links"><a onclick="showPage('home')">Home</a><a onclick="showPage('experience')">Experience</a><a onclick="showPage('contact')">Contact</a></div><span>© 2026</span></div></footer>
+  </section>
 </div>
 
 
-<!-- ══════════════════════════════════════════
-     PAGE: CONTACT
-══════════════════════════════════════════ -->
+<!-- PAGE: CONTACT -->
 <div id="page-contact" class="page">
-  <div class="page-hero"><div class="wrap"><div class="page-hero-tag">Contact</div><h1>Let's solve something<br><em>together.</em></h1><p class="page-hero-desc">Open to senior engineering roles and freelance simulation projects. Reach out for a technical discussion — no commitment required.</p></div></div>
-  <section style="background:var(--surface);"><div class="wrap">
-    <div class="contact-grid">
-      <div class="fade-up">
-        <div class="sec-tag">Reach me directly</div>
-        <div class="contact-cards">
-          <a href="mailto:ch.darabi@gmail.com" class="ccard"><div><div class="ccard-lbl">Email</div><div class="ccard-val">ch.darabi@gmail.com</div></div><div class="ccard-arrow">→</div></a>
-          <a href="https://www.linkedin.com/in/ali-cheloee-darabi-61526665/" target="_blank" rel="noopener" class="ccard"><div><div class="ccard-lbl">LinkedIn</div><div class="ccard-val">ali-cheloee-darabi</div></div><div class="ccard-arrow">→</div></a>
-          <a href="https://scholar.google.com/citations?user=HwTuUgIAAAAJ" target="_blank" rel="noopener" class="ccard"><div><div class="ccard-lbl">Google Scholar</div><div class="ccard-val">Publications & Research</div></div><div class="ccard-arrow">→</div></a>
-          <div class="ccard cv-btn" style="cursor:pointer;"><div><div class="ccard-lbl">CV / Resume</div><div class="ccard-val">Download PDF</div></div><div class="ccard-arrow">→</div></div>
-        </div>
-        <div style="margin-top:28px;background:var(--accent-light);padding:20px 22px;border-left:3px solid var(--accent);">
-          <div style="font-family:var(--mono);font-size:10px;text-transform:uppercase;letter-spacing:.08em;color:var(--accent);margin-bottom:6px;">NDA Available</div>
-          <p style="font-size:13px;color:var(--muted);line-height:1.7;">For confidential industrial projects, I'm happy to sign an NDA before any technical discussion begins.</p>
-        </div>
-      </div>
-      <div class="fade-up" style="transition-delay:.15s">
-        <div class="sec-tag" style="margin-bottom:16px;">Send a message</div>
-        <div class="chat-box" id="chatBox">
-          <div class="chat-header"><div class="chat-dot"></div><div class="chat-hname">Ali Cheloee-Darabi</div><div class="chat-hstatus">Replies within 24h</div></div>
-          <div class="chat-messages" id="chatMessages">
-            <div class="msg bot">Hello! I'm Ali. What can I help you with? Feel free to ask about my services or send a project brief.<div class="msg-time">just now</div></div>
+  <section style="padding-top:160px;">
+    <div class="wrap">
+      <div class="sec-tag">Contact</div>
+      <h1 class="sec-title">Let's talk.</h1>
+      <div style="display:grid; grid-template-columns: 1fr 400px; gap:64px;">
+        <div>
+          <p class="case-p">I'm available for technical discussions, potential job roles, or simulation consulting. Feel free to reach out via email or LinkedIn.</p>
+          <div style="margin-top:40px; display:flex; flex-direction:column; gap:16px;">
+            <a href="mailto:ch.darabi@gmail.com" style="font-size:24px; font-family:var(--serif); border-bottom:1px solid var(--border); padding-bottom:8px; width:fit-content;">ch.darabi@gmail.com</a>
+            <a href="https://www.linkedin.com/in/ali-cheloee-darabi-61526665/" target="_blank" style="font-size:20px; color:var(--accent);">LinkedIn Profile →</a>
+            <a href="Lebenslauf_Ali_Cheloee-Darabi.pdf" target="_blank" style="font-size:20px; color:var(--text);">Download CV (PDF) →</a>
           </div>
-          <div class="chat-typing" id="chatTyping"><div class="dot-anim"></div><div class="dot-anim"></div><div class="dot-anim"></div></div>
-          <div class="chat-quick" id="quickBtns">
-            <button class="quick-btn" onclick="quickSend('I need FEM simulation')">FEM Simulation</button>
-            <button class="quick-btn" onclick="quickSend('Fatigue analysis inquiry')">Fatigue Analysis</button>
-            <button class="quick-btn" onclick="quickSend('I\'m looking to hire full-time')">Job Opportunity</button>
-            <button class="quick-btn" onclick="quickSend('I have a Python automation project')">Automation</button>
-          </div>
-          <div class="chat-input-row"><input class="chat-input" id="chatInput" type="text" placeholder="Type your message…" autocomplete="off"><button class="chat-send" onclick="sendChat()">Send</button></div>
+        </div>
+        <div style="background:var(--accent-light); padding:32px; border-radius:4px;">
+          <h4 style="margin-bottom:12px; font-family:var(--serif);">Based in</h4>
+          <p style="font-family:var(--mono); color:var(--accent);">Bremen, Germany</p>
+          <p style="font-size:13px; color:var(--muted); margin-top:24px;">Open to relocate or remote collaboration.</p>
         </div>
       </div>
     </div>
-  </div></section>
-  <footer><div class="footer-inner"><span>Ali Cheloee-Darabi</span><div class="footer-links"><a onclick="showPage('home')">Home</a><a onclick="showPage('services')">Services</a><a onclick="showPage('about')">About</a></div><span>© 2026</span></div></footer>
+  </section>
 </div>
 
 
-<!-- ══════════════════════════════════════════
-     JAVASCRIPT
-══════════════════════════════════════════ -->
+<footer>
+  <div class="wrap">
+    <div class="footer-inner">
+      <span>Ali Cheloee-Darabi</span>
+      <span>© 2026</span>
+    </div>
+  </div>
+</footer>
+
 <script>
-/* ── Page routing ── */
+/* PAGE ROUTING */
 function showPage(name) {
   document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
   const target = document.getElementById('page-' + name);
   if(target) {
     target.classList.add('active');
     window.scrollTo({top:0, behavior:'smooth'});
-    // re-trigger fade-up animations
-    setTimeout(() => {
-      target.querySelectorAll('.fade-up').forEach(el => {
-        el.classList.remove('on');
-        void el.offsetWidth;
-      });
-      observeFadeUps();
-    }, 50);
+    // Reset animations
+    target.querySelectorAll('.fade-up').forEach(el => {
+      el.classList.remove('on');
+    });
+    setTimeout(observeFadeUps, 100);
   }
-  // Update active nav link
-  document.querySelectorAll('.nav-center a[data-page]').forEach(a => {
-    a.classList.toggle('active', a.dataset.page === name);
+  document.querySelectorAll('.nav-center a').forEach(a => {
+    a.classList.toggle('active', a.getAttribute('onclick')?.includes(name));
   });
 }
 
-/* ── Scroll animations ── */
+/* FADE ANIMATIONS */
 const fadeObs = new IntersectionObserver(entries => {
   entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('on'); fadeObs.unobserve(e.target); }});
-}, { threshold:0.08 });
+}, { threshold:0.1 });
+
 function observeFadeUps() {
-  document.querySelectorAll('.page.active .fade-up:not(.on)').forEach(el => fadeObs.observe(el));
+  document.querySelectorAll('.page.active .fade-up').forEach(el => fadeObs.observe(el));
 }
 observeFadeUps();
-
-/* ── CV button ── */
-document.querySelectorAll('.cv-btn').forEach(el => {
-  el.addEventListener('click', e => { e.preventDefault(); alert('Upload your CV PDF and replace this alert with a direct download link.'); });
-});
-
-/* ── Chat ── */
-const chatReplies = {
-  fem:     "FEM simulation is my core service — static, fatigue, and damage-tolerance analysis using Abaqus and ANSYS per FKM guidelines. Email me at ch.darabi@gmail.com with your project brief and I'll respond within 24 hours.",
-  fatigue: "Fatigue and damage-tolerance analysis is my speciality — 12+ years including FKM-compliant assessments and fracture mechanics. Email ch.darabi@gmail.com with your component details.",
-  python:  "Python-based simulation automation is something I enjoy — from workflow scripting to full ML pipelines. Send details to ch.darabi@gmail.com.",
-  job:     "I'm open to senior engineering roles in FEM / simulation / R&D. Please send the job description to ch.darabi@gmail.com and I'll review it promptly.",
-  ml:      "Data-driven modelling and ANN/deep learning for engineering applications — happy to discuss. Email ch.darabi@gmail.com with your use case.",
-  cad:     "I work in CATIA V5 and SolidWorks for CAD alongside FEM work. Send your project scope to ch.darabi@gmail.com.",
-  default: ["Thanks for reaching out! I'll get back to you at ch.darabi@gmail.com within 24 hours.", "Great — I'll follow up via email shortly. You can also reach me directly at ch.darabi@gmail.com.", "Received! For urgent matters, email ch.darabi@gmail.com directly."]
-};
-
-function getReply(msg) {
-  const m = msg.toLowerCase();
-  if(m.includes('fem')||m.includes('simulat')||m.includes('ansys')||m.includes('abaqus')) return chatReplies.fem;
-  if(m.includes('fatig')||m.includes('damage')||m.includes('fracture')||m.includes('crack')) return chatReplies.fatigue;
-  if(m.includes('python')||m.includes('automat')||m.includes('script')) return chatReplies.python;
-  if(m.includes('job')||m.includes('hire')||m.includes('full-time')||m.includes('position')||m.includes('role')) return chatReplies.job;
-  if(m.includes('ml')||m.includes('machine learn')||m.includes('ai')||m.includes('ann')||m.includes('deep learn')) return chatReplies.ml;
-  if(m.includes('cad')||m.includes('catia')||m.includes('solidworks')||m.includes('model')) return chatReplies.cad;
-  return chatReplies.default[Math.floor(Math.random()*chatReplies.default.length)];
-}
-function addMsg(text, type) {
-  const msgs = document.getElementById('chatMessages');
-  const d = document.createElement('div');
-  d.className='msg '+type;
-  d.innerHTML=text+'<div class="msg-time">just now</div>';
-  msgs.appendChild(d); msgs.scrollTop=msgs.scrollHeight;
-}
-function sendChat() {
-  const inp=document.getElementById('chatInput');
-  const val=inp.value.trim(); if(!val) return;
-  addMsg(val,'user'); inp.value='';
-  document.getElementById('quickBtns').style.display='none';
-  const typing=document.getElementById('chatTyping');
-  typing.classList.add('show');
-  document.getElementById('chatMessages').scrollTop=9999;
-  setTimeout(()=>{ typing.classList.remove('show'); addMsg(getReply(val),'bot'); }, 900+Math.random()*600);
-}
-function quickSend(text){ document.getElementById('chatInput').value=text; sendChat(); }
-function openChat(service){ showPage('contact'); setTimeout(()=>{ document.getElementById('chatInput').value='I would like a quote for: '+service; document.getElementById('chatInput').focus(); },600); }
-document.addEventListener('keydown', e=>{ if(e.key==='Enter'&&document.getElementById('chatInput')===document.activeElement) sendChat(); });
 </script>
 </body>
 </html>
